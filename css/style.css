@@ -37,6 +37,11 @@
     display: block;
 }
 
+#login {
+    position: absolute;
+    right: 20px;
+}
+
 /**
  * Demo Styles
  */
