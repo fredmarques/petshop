@@ -10,7 +10,7 @@ function changeMenu(menuitem) {
 
 	// Hide actual div
 	var divitens = document.getElementsByClassName("div-content");
-	for(i = 0; i < menuitens.length; i++)
+	for(i = 0; i < divitens.length; i++)
 		divitens[i].className = 'div-content';
 
 	// Show new div
