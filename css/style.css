@@ -29,6 +29,7 @@
 
 .div-content {
     padding-left:16px;
+    padding-right:16px;
     display: none;
 }
 
@@ -72,4 +73,16 @@ body {
   padding: 1rem;
   background-color: #efefef;
   text-align: center;
+}
+
+.col-3 {
+    width: 25%;
+    padding: 10px;
+    background-color: blue;
+    float: left;
+    border: 1px solid red;
+}
+
+.card {
+    background-color: #000000;
 }
