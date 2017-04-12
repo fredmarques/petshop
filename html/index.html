@@ -14,23 +14,53 @@
         <meta name="author" content="PatCare">
         <meta name="copyright" content="PetCare">
         <meta name="name" content="">
+
         <title>PetCare - O Maior Petshop Online do Brasil</title>
+
         <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+        <script src="../js/petshop.js" type='application/javascript'></script>
     </head>
     <body>
         <div class="topnav">
-            <a class="active" href="#home">Home</a>
-            <a href="#news">Login</a>
-            <a href="#news">Serviços</a>
-            <a href="#news">Produtos</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
+            <a id="home" class="menuitem active" href="#home" onclick="changeMenu('home')">Home</a>
+            <a id="login" class="menuitem" href="#news" onclick="changeMenu('login')">Login</a>
+            <a id="services" class="menuitem" href="#news" onclick="changeMenu('services')">Serviços</a>
+            <a id="products" class="menuitem" href="#news" onclick="changeMenu('products')">Produtos</a>
+            <a id="contact" class="menuitem" href="#contact" onclick="changeMenu('contact')">Contact</a>
+            <a id="about" class="menuitem" href="#about" onclick="changeMenu('about')">About</a>
         </div>
 
-        <div style="padding-left:16px">
-            <h2>Top Navigation Example</h2>
+        <div id="home-content" class="div-content active-div">
+            <h2>Div home</h2>
             <p>Some content..</p>
         </div>
+
+        <div id="login-content" class="div-content">
+            <h2>Div login</h2>
+            <p>Some content..</p>
+        </div>
+
+        <div id="services-content" class="div-content">
+            <h2>Div services</h2>
+            <p>Some content..</p>
+        </div>
+
+        <div id="products-content" class="div-content">
+            <h2>Div products</h2>
+            <p>Some content..</p>
+        </div>
+
+        <div id="contact-content" class="div-content">
+            <h2>Div contact</h2>
+            <p>Some content..</p>
+        </div>
+
+        <div id="about-content" class="div-content">
+            <h2>Div about</h2>
+            <p>Some content..</p>
+        </div>
+
         <footer>
             PetCare é uma marca não registrada e de dominio publico
         </footer>

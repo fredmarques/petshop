@@ -9,7 +9,7 @@ body {
 }
 
 /* Style the links inside the navigation bar */
-.topnav a {
+.menuitem {
     float: left;
     display: block;
     color: #f2f2f2;
@@ -20,7 +20,7 @@ body {
 }
 
 /* Change the color of links on hover */
-.topnav a:hover {
+.menuitem:hover {
     background-color: #ddd;
     color: black;
 }
@@ -29,4 +29,14 @@ body {
 .topnav a.active {
     background-color: #4CAF50;
     color: white;
+}
+
+.div-content {
+    padding-left:16px;
+    display: none;
+}
+
+.active-div {
+    padding-left:16px;
+    display: block;
 }
