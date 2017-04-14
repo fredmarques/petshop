@@ -82,6 +82,12 @@ img {
   margin-right: 3%;
 }
 
+.service-img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
 /**
  * Footer Styles
  */
@@ -102,6 +108,14 @@ img {
   padding: 10px;
   float: left;
   align-content: center;
+  border: 0px dashed blueviolet;
+}
+
+.col-9 {
+  width: 75%;
+  padding: 10px;
+  float: left;
+  border: 0px dashed gray;
 }
 
 .col-12 {
@@ -125,10 +139,18 @@ img {
 .hcard {
   -webkit-box-shadow: 2px 2px 3px #666666;
   -moz-box-shadow: 2px 2px 3px #666666;
+  border: 1px dashed gray;
+  margin: 1rem;
 }
 
 .inlineblock {
   display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 5px 0;
+  margin: auto;
+  text-align: center;
+  min-height: 46px;
 }
 
 .product-name {
@@ -174,7 +196,7 @@ img {
   -moz-border-radius: 9;
   border-radius: 9px;
   text-shadow: 0px 1px 3px #666666;
-  -webkit-box-shadow: 2px 2px 3px #666666;
+  -we‒‒‒bkit-box-shadow: 2px 2px 3px #666666;
   -moz-box-shadow: 2px 2px 3px #666666;
   box-shadow: 2px 2px 3px #666666;
   color: #ffffff;
@@ -196,7 +218,7 @@ img {
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
   width: 100%; /* Full width */
-  padding: 12px; /* Some padding */  
+  padding: 12px; /* Some padding */
   border: 1px solid #ccc; /* Gray border */
   border-radius: 4px; /* Rounded borders */
   box-sizing: border-box; /* Make sure that padding and width stays in place */
@@ -229,4 +251,62 @@ input[type=submit]:hover {
 
 #subject {
   height:200px;
+}
+
+.service-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 5px 0;
+  margin: auto;
+  text-align: left;
+  min-height: 46px;
+}
+
+.promotion {
+  font-size: 16px;
+  color: gray;
+  text-decoration: line-through;
+  text-align: center;
+  margin-top: 30px;
+  min-height: 40px;
+}
+
+.btn-div-more {
+  bottom:0px;
+  text-align: right;
+  position: static;
+  margin: 0 0 0 0;
+
+}
+
+.btn-more {
+  background: #52db37;
+  background-image: -webkit-linear-gradient(top, #52db37, #389626);
+  background-image: -moz-linear-gradient(top, #52db37, #389626);
+  background-image: -ms-linear-gradient(top, #52db37, #389626);
+  background-image: -o-linear-gradient(top, #52db37, #389626);
+  background-image: linear-gradient(to bottom, #52db37, #389626);
+  -webkit-border-radius: 9;
+  -moz-border-radius: 9;
+  border-radius: 9px;
+  text-shadow: 0px 1px 3px #666666;
+  -webkit-box-shadow: 2px 2px 3px #666666;
+  -moz-box-shadow: 2px 2px 3px #666666;
+  box-shadow: 2px 2px 3px #666666;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.service-container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.service-img {
+  margin: 0px;
+  border-right-width: 0;
+
 }
