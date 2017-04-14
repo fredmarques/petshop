@@ -130,10 +130,11 @@ img {
 }
 
 .card {
-  width: 214px;
-  border: 1px dashed gray;
-  margin: auto;
   padding: 8px;
+  -webkit-box-shadow: 2px 2px 3px #666666;
+  -moz-box-shadow: 2px 2px 3px #666666;
+  border: 1px solid gray;
+  margin: 1rem;
 }
 
 .hcard {
