@@ -139,7 +139,7 @@ img {
 .hcard {
   -webkit-box-shadow: 2px 2px 3px #666666;
   -moz-box-shadow: 2px 2px 3px #666666;
-  border: 1px dashed gray;
+  border: 1px solid gray;
   margin: 1rem;
 }
 
