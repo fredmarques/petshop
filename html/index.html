@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
         <!-- SEO Stuff -->
@@ -26,108 +25,180 @@
             <a id="home" class="menuitem active" href="#home" onclick="changeMenu('home')">Home</a>
             <a id="services" class="menuitem" href="#services" onclick="changeMenu('services')">Serviços</a>
             <a id="products" class="menuitem" href="#products" onclick="changeMenu('products')">Produtos</a>
-            <a id="contact" class="menuitem" href="#contact" onclick="changeMenu('contact')">Contacto'</a>
-            <a id="calendar" class="menuitem" href="###" onclick="changeMenu('calendar')">Calendario</a>
+            <a id="contact" class="menuitem" href="#contact" onclick="changeMenu('contact')">Contato</a>
+            <a id="calendar" class="menuitem" href="#calendar" onclick="changeMenu('calendar')">Calendario</a>
             <a id="about" class="menuitem" href="#about" onclick="changeMenu('about')">Sobre</a>
             <a id="login" class="menuitem" href="#login" onclick="changeMenu('login')">Login</a>
+            <a id="logout" class="menuitem" href="#logout" onclick="logout()">Sair</a>
         </div>
 
         <div class="wrapper">
-            <div class="calendar-content div-content">
+            <div id="calendar-content" class="div-content">
                 <link rel="html" type="text/html" href="../html/calendar.html">
             </div>
 
             <div id="home-content" class="div-content active-div">
-                 <div class="container">
+                <div class="container">
                     <div class="row">
                         <div class="col-12">
                             <h2>PetCare um verdadeiro spa de animais</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, a ex perferendis placeat dignissimos veniam laboriosam amet soluta, recusandae aliquam blanditiis ut eos? Earum, nihil ipsa ad, fugiat cupiditate tempora?</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos dolorem laborum modi adipisci porro eum odit magnam, deleniti nisi itaque eligendi accusantium repellat ea suscipit. Distinctio aliquid sed, sint minima.</p>                            
                         </div>            
-                    </div>
-
                     
-                    <div class="col-12">
-                        <div class="text-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, a ex perferendis placeat dignissimos veniam laboriosam amet soluta, recusandae aliquam blanditiis ut eos? Earum, nihil ipsa ad, fugiat cupiditate tempora?</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos dolorem laborum modi adipisci porro eum odit magnam, deleniti nisi itaque eligendi accusantium repellat ea suscipit. Distinctio aliquid sed, sint minima.</p>                            
+                        <div class="col-12">
+                            <div class="text-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, a ex perferendis placeat dignissimos veniam laboriosam amet soluta, recusandae aliquam blanditiis ut eos? Earum, nihil ipsa ad, fugiat cupiditate tempora?</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos dolorem laborum modi adipisci porro eum odit magnam, deleniti nisi itaque eligendi accusantium repellat ea suscipit. Distinctio aliquid sed, sint minima.</p>                            
+                            </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
 
             <div id="login-content" class="div-content">
-                <div class="col-12">
-                    <h2>Div login</h2>
-                    <p>Some content..</p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 logged-in" hidden>
+                            Bem-vindo, <span id="your-name"></span>
+                        </div>
+                        <div class="col-12 not-logged-in">
+                            <form action="">
+
+                                <label for="user">Usuário</label>
+                                <input type="text" id="user" name="user" placeholder="Seu usuário">
+
+                                <label for="pass">Senha</label>
+                                <input type="password" id="pass" name="pass" placeholder="Sua senha">
+
+                                <input type="button" value="Fazer login" onclick="makeLogin()">
+
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div id="services-content" class="div-content">
-                <div class="container row">
-                    <div class="col-12">
-                        <h2>Nossos Serviços</h2>
-                        <p><span class="1000">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio unde aperiam a, optio quis reprehenderit placeat saepe eligendi repudiandae praesentium quidem ut nam rem eaque illum tempore non, ratione repellendus.</span></p>                        
+                <div class="container adm" hidden>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>Cadastrar novo serviço</h2>
+
+                            <form action="">
+                                <label for="servicename">Nome do serviço</label>
+                                <input type="text" id="servicename" name="servicename" placeholder="Nome do novo serviço">                                
+
+                                <label for="servicedescription">Descrição</label>
+                                <textarea id="servicedescription" name="servicedescription" placeholder="Descrição do novo serviço"></textarea>
+
+                                <label for="serviceImageURL">URL da imagem</label>
+                                <input type="text" id="serviceImageURL" name="serviceImageURL" placeholder="URL da imagem">
+
+                                <input type="button" value="Cadastrar">   
+                            </form>                  
+                        </div>
                     </div>
+
                 </div>
 
-                <!-- Card 1 -->
-                <div class="col-12 hcard">
-                    <div class="col-3 service-img">
-                        <img src="../img/services/consulta.jpg">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>Nossos Serviços</h2>
+                            <p><span class="1000">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio unde aperiam a, optio quis reprehenderit placeat saepe eligendi repudiandae praesentium quidem ut nam rem eaque illum tempore non, ratione repellendus.</span></p>                        
+                        </div>
                     </div>
 
-                    <div class="col-9">
-                        <div class="service-container">                        
-                            <div class="service-name">Consulta</div>
-                            <div class="service-desc">LERO LERO LERO LERO LERO LERO LERO LERO</div>
-                        </div>
-                        <div class="btn-div-more">
-                            <button class="btn-more">Saiba Mais</button>
-                        </div>
-                    </div>
-                </div>
+                    <!-- Card 1 -->
+                    <div class="row">
+                        <div class="col-12 hcard">
+                            <div class="col-3 service-img">
+                                <img src="../img/services/consulta.jpg">
+                            </div>
 
-                <!-- Card 2 -->
-                <div class="col-12 hcard">
-                    <div class="col-3 service-img">
-                        <img src="../img/services/vacinacao.jpg">
-                    </div>
-                    <div class="col-9">
-                        <div class="service-container">
-                            <div class="service-name">Vacinação</div>
-                            <div class="service-desc">LERO LERO LERO LERO LERO LERO LERO LERO</div>
-                        </div>
-                        <div class="btn-div-more">
-                                <button class="btn-more">Saiba Mais</button>
+                            <div class="col-9">
+                                <div class="service-container">                        
+                                    <div class="service-name">Consulta</div>
+                                    <div class="service-desc">LERO LERO LERO LERO LERO LERO LERO LERO</div>
+                                </div>
+                                <div class="btn-div-more">
+                                    <button class="btn-more">Saiba Mais</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Card 3 -->
-                <div class="col-12 hcard">
-                    <div class="col-3 service-img">
-                        <img src="../img/services/estetica.jpg">
-                    </div>
-                    <div class="col-9">
-                        <div class="service-container">
-                            <div class="service-name">Estética</div>
-                            <div class="service-desc">LERO LERO LERO LERO LERO LERO LERO LERO</div>
+                    <!-- Card 2 -->
+                    <div class="row">
+                        <div class="col-12 hcard">
+                            <div class="col-3 service-img">
+                                <img src="../img/services/vacinacao.jpg">
+                            </div>
+                            <div class="col-9">
+                                <div class="service-container">
+                                    <div class="service-name">Vacinação</div>
+                                    <div class="service-desc">LERO LERO LERO LERO LERO LERO LERO LERO</div>
+                                </div>
+                                <div class="btn-div-more">
+                                        <button class="btn-more">Saiba Mais</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="btn-div-more">
-                            <button class="btn-more">Saiba Mais</button>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="row">
+                        <div class="col-12 hcard">
+                            <div class="col-3 service-img">
+                                <img src="../img/services/estetica.jpg">
+                            </div>
+                            <div class="col-9">
+                                <div class="service-container">
+                                    <div class="service-name">Estética</div>
+                                    <div class="service-desc">LERO LERO LERO LERO LERO LERO LERO LERO</div>
+                                </div>
+                                <div class="btn-div-more">
+                                    <button class="btn-more">Saiba Mais</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div id="products-content" class="div-content">
-                <div class="container row">
-                    <div class="col-12">
-                        <h2>Nossos Produtos</h2>
-                        <p><span class="1000">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio unde aperiam a, optio quis reprehenderit placeat saepe eligendi repudiandae praesentium quidem ut nam rem eaque illum tempore non, ratione repellendus.</span></p>                        
+
+                <div class="container adm" hidden>
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>Cadastrar novo produto</h2>
+
+                            <form action="">
+                                <label for="productname">Nome do produto</label>
+                                <input type="text" id="productname" name="productname" placeholder="Nome do novo produto">                                
+
+                                <label for="productdescription">Descrição</label>
+                                <textarea id="productdescription" name="productdescription" placeholder="Descrição do novo produto"></textarea>
+
+                                <label for="productImageURL">URL da imagem</label>
+                                <input type="text" id="productImageURL" name="productImageURL" placeholder="URL da imagem">
+
+                                <input type="button" value="Cadastrar">   
+                            </form>                  
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>Nossos Produtos</h2>
+                            <p><span class="1000">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio unde aperiam a, optio quis reprehenderit placeat saepe eligendi repudiandae praesentium quidem ut nam rem eaque illum tempore non, ratione repellendus.</span></p>                        
+                        </div>
                     </div>
                 </div>
 
@@ -217,32 +288,40 @@
             </div>
 
             <div id="contact-content" class="div-content">
-                <h2>Div contact</h2>
-                <p>Some content..</p>
-                <form action="/action_page.php">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>Fale Conosco</h2>
+                            <p>Envia aqui sua dúvida, sugestão, crítica ou elogio. Prometemos responder o mais rápido possível! :)</p>
+                            <form action="">
 
-                    <label for="fname">Nome</label>
-                    <input type="text" id="fname" name="firstname" placeholder="Seu nome..">
+                                <label for="fname">Nome</label>
+                                <input type="text" id="fname" name="firstname" placeholder="Seu nome..">
 
-                    <label for="lname">E-mail</label>
-                    <input type="text" id="email" name="email" placeholder="Seu e-mail..">
+                                <label for="lname">E-mail</label>
+                                <input type="text" id="email" name="email" placeholder="Seu e-mail..">
 
-                    <label for="lname">Telefone</label>
-                    <input type="text" id="phone" name="phone" placeholder="Seu telefone..">
+                                <label for="lname">Telefone</label>
+                                <input type="text" id="phone" name="phone" placeholder="Seu telefone..">
 
-                    <label for="subject">Mensagem</label>
-                    <textarea id="subject" name="subject" placeholder="Escreva aqui sua mensagem.."></textarea>
+                                <label for="subject">Mensagem</label>
+                                <textarea id="subject" name="subject" placeholder="Escreva aqui sua mensagem.."></textarea>
 
-                    <input type="submit" value="Enviar">
+                                <input type="submit" value="Enviar">
 
-                </form>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div id="about-content" class="div-content">
-                <div class="container row">
-                    <div class="col-12">
-                        <h2>Nossos Produtos</h2>
-                        <p><span class="1000">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio unde aperiam a, optio quis reprehenderit placeat saepe eligendi repudiandae praesentium quidem ut nam rem eaque illum tempore non, ratione repellendus.</span></p>                        
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>Nossos Produtos</h2>
+                            <p><span class="1000">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio unde aperiam a, optio quis reprehenderit placeat saepe eligendi repudiandae praesentium quidem ut nam rem eaque illum tempore non, ratione repellendus.</span></p>                        
+                        </div>
                     </div>
                 </div>
 
