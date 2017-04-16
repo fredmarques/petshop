@@ -34,7 +34,40 @@
 
         <div class="wrapper">
             <div id="calendar-content" class="div-content">
-                <link rel="html" type="text/html" href="../html/calendar.html">
+                <!-- <link rel="html" type="text/html" href="../html/calendar.html"> -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>Agende o seu horário conosco</h2>
+
+                            <select id="service-select">
+                              <option value="">Escolha o serviço</option>
+                              <option value="consulta">Consulta</option>
+                              <option value="vacinacao">Vacinação</option>
+                              <option value="estetica">Estética</option>
+                            </select>
+
+                            <!-- Pensei em montar esse select dinamicamente mostrando os dias das próximas 10 semanas, mas nao deu tempo.. -->
+                            <select id="day-select"> 
+                              <option value="">Escolha o dia</option>
+                              <!-- <option value="consulta">Consulta</option>
+                              <option value="vacinacao">Vacinação</option>
+                              <option value="estetica">Estética</option> -->
+                            </select>
+
+                            <!-- Idem anterior -->
+                            <select id="hour-select"> 
+                              <option value="">Escolha o horário</option>
+                              <!-- <option value="consulta">Consulta</option>
+                              <option value="vacinacao">Vacinação</option>
+                              <option value="estetica">Estética</option> -->
+                            </select>
+
+                            <input id="schedule" type="button" value="Agendar">
+
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div id="home-content" class="div-content active-div">
