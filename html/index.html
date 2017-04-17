@@ -92,8 +92,94 @@
             <div id="login-content" class="div-content">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 logged-in" hidden>
-                            Bem-vindo, <span id="your-name"></span>
+                        <div class="col-12 logged-in-user" hidden>
+                            Bem-vindo, <span id="your-name-user"></span>
+                            <div class="hcard">
+                                <form action="">
+                                    <div class="container">
+                                        <h2>Cadastro de Animais</h2>
+                                        <label for="newPetName">Nome</label>
+                                        <input type="text" id="newPetName" name="newPetName" placeholder="Nome">
+                                        
+                                        <label for="newPetId">Id</label>
+                                        <input type="text" id="newPetId" name="newPetId" placeholder="Id">
+
+                                        <label for="newPetPhone">Raça</label>
+                                        <input type="text" id="newPetPhone" name="newPetPhone" placeholder="Telefone">
+
+                                        <label for="newPetEmail">Idade</label>
+                                        <input type="text" id="newPetEmail" name="newPetEmail" placeholder="Email">
+                                    
+                                        <label for="pass">Link para foto do seu pet</label>
+                                        <input type="password" id="newPetPhoto" name="newPetPhoto" placeholder="Local da foto de usuário">
+
+                                        <input type="button" value="Criar usuário" onclick="makeNewPet()">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-12 logged-in-admin" hidden>
+                            Bem-vindo, <span id="your-name-admin"></span>
+                            <div class="hcard">
+                                <form action="">
+                                    <div class="container">
+                                        <h2>Cadastro de administradores</h2>
+                                        <label for="newUserName">Nome</label>
+                                        <input type="text" id="newUserName" name="newUserName" placeholder="Nome">
+                                        
+                                        <label for="newUserId">Id</label>
+                                        <input type="text" id="newUserId" name="newUserId" placeholder="Id">
+
+                                        <label for="newUserPhone">Telefone</label>
+                                        <input type="text" id="newUserPhone" name="newUserPhone" placeholder="Telefone">
+
+                                        <label for="newUserEmail">Email</label>
+                                        <input type="text" id="newUserEmail" name="newUserEmail" placeholder="Email">
+                                        
+                                        <label for="pass">Senha</label>
+                                        <input type="password" id="newUserPass" name="newUserPass" placeholder="Senha">
+
+                                        <label for="pass">Link para foto de perfil</label>
+                                        <input type="password" id="newUserPhoto" name="newUserPhoto" placeholder="Local da foto de usuário">
+
+                                        <input type="button" value="Criar usuário" onclick="makeNewUser()">
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="hcard">
+                                <form action="">
+                                    <div class="container">
+                                        <h2>Cadastro de Clientes</h2>
+                                        <label for="newClientName">Nome</label>
+                                        <input type="text" id="newClientName" name="newClientName" placeholder="Nome">
+                                        
+                                        <label for="newClientId">Id</label>
+                                        <input type="text" id="newClientId" name="newClientId" placeholder="Id">
+
+                                        <label for="newClientPhone">Telefone</label>
+                                        <input type="text" id="newClientPhone" name="newClientPhone" placeholder="Telefone">
+
+                                        <label for="newClientAddress">Endereço</label>
+                                        <input type="text" id="newClientAddress" name="newClientAddress" placeholder="Telefone">
+
+
+                                        <label for="newClientEmail">Email</label>
+                                        <input type="text" id="newClientEmail" name="newClientEmail" placeholder="Email">
+                                        
+                                        <label for="pass">Senha</label>
+                                        <input type="password" id="newClientPass" name="newClientPass" placeholder="Senha">
+
+                                        <label for="pass">Link para foto de perfil</label>
+                                        <input type="password" id="newClientPhoto" name="newClientPhoto" placeholder="Local da foto de usuário">
+
+                                        <input type="button" value="Criar usuário" onclick="makeNewClient()">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="hcard">
+                                Cadastro de animais - admin
+                            </div>
                         </div>
                         <div class="col-12 not-logged-in">
                             <form action="">

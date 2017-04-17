@@ -18,7 +18,6 @@ function changeMenu(menuitem) {
 }
 
 function makeLogin() {
-
 	// Getting login data
 	var loginname = document.getElementById('user').value;
 	var pass = document.getElementById('pass').value;
@@ -29,13 +28,20 @@ function makeLogin() {
 
 	// Alerting user he's logged-in
 	alert('Você está logado como '+ loginname)
-	document.getElementById('your-name').innerHTML = loginname;
+	document.getElementById('your-name-admin').innerHTML = loginname;
+	document.getElementById('your-name-user').innerHTML = loginname;
 
-	// Showing logged-in elements
-	var loggedInElems = document.getElementsByClassName("logged-in");
-	for(i = 0; i < loggedInElems.length; i++)
-		loggedInElems[i].style.display = 'block';
-
+	// Showing logged-in elements for admin
+	if(loginname == 'admin' && pass == 'admin') {
+	var loggedInElemsAdmin = document.getElementsByClassName("logged-in-admin");
+	for(i = 0; i < loggedInElemsAdmin.length; i++)
+		loggedInElemsAdmin[i].style.display = 'block';
+	} else {
+	// Showing logged-in elements for users
+	var loggedInElemsUsers = document.getElementsByClassName("logged-in-user");
+	for(i = 0; i < loggedInElemsUsers.length; i++)
+		loggedInElemsUsers[i].style.display = 'block';
+	}
 	// Hiding not-logged-in elements
 	var notLoggedInElems = document.getElementsByClassName("not-logged-in");
 	for(i = 0; i < notLoggedInElems.length; i++)
@@ -60,9 +66,13 @@ function logout() {
 	alert('Você fez logout')
 
 	// Hiding logged-in elements
-	var loggedInElems = document.getElementsByClassName("logged-in");
-	for(i = 0; i < loggedInElems.length; i++)
-		loggedInElems[i].style.display = 'none';
+	var loggedInElemsAdmin = document.getElementsByClassName("logged-in-admin");
+	for(i = 0; i < loggedInElemsAdmin.length; i++)
+		loggedInElemsAdmin[i].style.display = 'none';
+
+	var loggedInElemsUser = document.getElementsByClassName("logged-in-user");
+	for(i = 0; i < loggedInElemsUser.length; i++)
+		loggedInElemsUser[i].style.display = 'none';		
 
 	// Showing not-logged-in elements
 	var notLoggedInElems = document.getElementsByClassName("not-logged-in");
