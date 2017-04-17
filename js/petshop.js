@@ -1,3 +1,9 @@
+// Frederico de Azevedo Marques
+// 8936926
+
+// Bruno Pinto Ferraz fabri
+// 41548844
+
 function changeMenu(menuitem) {
 
 	// Hide actual buttom

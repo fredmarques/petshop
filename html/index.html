@@ -1,3 +1,9 @@
+<!--Frederico de Azevedo Marques-->
+<!--8936926-->
+
+<!--Bruno Pinto Ferraz fabri-->
+<!--41548844-->
+
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -177,8 +183,24 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="hcard">
-                                Cadastro de animais - admin
+                            <div class="col-12">
+                                <div class="hcard">
+                                    <div class="container">
+                                        <h2> Tabela de ganhos</h2>
+                                        <table>
+                                            <tr>
+                                                <th>Nome do produto/Serviço</th>	
+                                                <th>Quantidade</th>	
+                                                <th>Total</th>	
+                                            </tr>
+                                            <tr>
+                                                <td>foo</td>
+                                                <td>bar</td>
+                                                <td>derp</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-12 not-logged-in">
@@ -206,11 +228,17 @@
                             <h2>Cadastrar novo serviço</h2>
 
                             <form action="">
-                                <label for="servicename">Nome do serviço</label>
-                                <input type="text" id="servicename" name="servicename" placeholder="Nome do novo serviço">                                
+                                <label for="productname">Nome do produto</label>
+                                <input type="text" id="productname" name="productname" placeholder="Nome do serviço">                                
 
-                                <label for="servicedescription">Descrição</label>
-                                <textarea id="servicedescription" name="servicedescription" placeholder="Descrição do novo serviço"></textarea>
+                                <label for="serviceId">ID do serviço</label>
+                                <input type="text" id="serviceId" name="serviceId" placeholder="Id do serviço">                                
+
+                                <label for="serviceDescription">Descrição do serviço</label>
+                                <input type="text" id="serviceDescription" name="serviceDescription" placeholder="Descrição do serviço">                                
+
+                                <label for="servicePrice">Preço do serviço</label>
+                                <input type="text" id="servicePrice" name="servicePrice" placeholder="Preço do serviço">                                
 
                                 <label for="serviceImageURL">URL da imagem</label>
                                 <input type="text" id="serviceImageURL" name="serviceImageURL" placeholder="URL da imagem">
@@ -294,10 +322,24 @@
                     <div class="row">
                         <div class="col-12">
                             <h2>Cadastrar novo produto</h2>
-
                             <form action="">
                                 <label for="productname">Nome do produto</label>
-                                <input type="text" id="productname" name="productname" placeholder="Nome do novo produto">                                
+                                <input type="text" id="productname" name="productname" placeholder="Nome do produto">                                
+
+                                <label for="productId">ID do produto</label>
+                                <input type="text" id="productId" name="productId" placeholder="Id do produto">                                
+
+                                <label for="productDescription">Descrição do produto</label>
+                                <input type="text" id="productDescription" name="productDescription" placeholder="Descrição do produto">                                
+
+                                <label for="productPrice">Preço do produto</label>
+                                <input type="text" id="productPrice" name="productPrice" placeholder="Preço do produto">                                
+
+                                <label for="productStock">Quantidade do produto em estoque</label>
+                                <input type="text" id="productStock" name="productStock" placeholder="Quantidade em estoque">                                
+
+                                <label for="productSold">Quantidade do produto que já foi vendido</label>
+                                <input type="text" id="productSold" name="productSold" placeholder="Quantidade vendida">                                
 
                                 <label for="productdescription">Descrição</label>
                                 <textarea id="productdescription" name="productdescription" placeholder="Descrição do novo produto"></textarea>
