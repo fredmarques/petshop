@@ -29,3 +29,9 @@ Comentários:
 
 O carrinho do seriço não foi implementado porque a equipe avaliou que o serviço poderia ser implementado diretamente no calendário
 e assim não faria sentido contrar 3 serviços e fazer checkout. O cliente pagaria por cada serviço agendado.
+
+Usuáios do sistema:
+
+O sistema conta com uma conta admin/admin que habilita as telas de administrador.
+Para qualquer outra combinação de usuário e senha, o sistema vai fazer um login do usuário digitado e assim habilitar as telas
+de usuário comum.
