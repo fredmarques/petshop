@@ -98,3 +98,58 @@ function logout() {
 function makeNewPet() {
 	alert('Você cadastrou seu novo pet');
 }
+
+function fillCalendarDays() {
+	var today = new Date();
+	var block = '';
+	for(i = 0; i < 70; i++){
+		today.setDate(today.getDate() + i)
+		block += '<option value="">'+translateDay(today.getDay())+', '+today.getDate()+' de '+translateMonth(today.getMonth())+'</option>';
+	}
+
+	document.getElementById('day-select').innerHTML = block;
+}
+
+function translateDay(day) {
+	if(day == 0)
+		return 'Domingo';
+	else if(day == 1)
+		return 'Segunda-feira';
+	else if(day == 2)
+		return 'Terça-feira';
+	else if(day == 3)
+		return 'Quarta-feira';
+	else if(day == 4)
+		return 'Quinta-feira';
+	else if(day == 5)
+		return 'Sexta-feira';
+	else if(day == 6)
+		return 'Sábado';
+}
+
+function translateMonth(month) {
+	if(month == 0)
+		return 'Janeiro';
+	else if(month == 1)
+		return 'Fevereiro';
+	else if(month == 2)
+		return 'Março';
+	else if(month == 3)
+		return 'Abril';
+	else if(month == 4)
+		return 'Maio';
+	else if(month == 5)
+		return 'Junho';
+	else if(month == 6)
+		return 'Julho';
+	else if(month == 7)
+		return 'Agosto';
+	else if(month == 8)
+		return 'Setembro';
+	else if(month == 9)
+		return 'Outubro';
+	else if(month == 10)
+		return 'Novembro';
+	else if(month == 11)
+		return 'Dezembro';
+}

@@ -54,12 +54,7 @@
                             </select>
 
                             <!-- Pensei em montar esse select dinamicamente mostrando os dias das próximas 10 semanas, mas nao deu tempo.. -->
-                            <select id="day-select"> 
-                              <option value="">Escolha o dia</option>
-                              <!-- <option value="consulta">Consulta</option>
-                              <option value="vacinacao">Vacinação</option>
-                              <option value="estetica">Estética</option> -->
-                            </select>
+                            <select id="day-select"></select>
 
                             <!-- Idem anterior -->
                             <select id="hour-select"> 
@@ -495,5 +490,11 @@
         <footer id="footer">
             PetCare é uma marca não registrada e de dominio público
         </footer>
+
+        <script>
+            (function() {
+                fillCalendarDays();
+            })();
+        </script>
     </body>
 </html>
