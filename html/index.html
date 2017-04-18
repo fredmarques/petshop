@@ -53,12 +53,7 @@
                             </select>
 
                             <!-- Pensei em montar esse select dinamicamente mostrando os dias das próximas 10 semanas, mas nao deu tempo.. -->
-                            <select id="day-select"> 
-                              <option value="">Escolha o dia</option>
-                              <!-- <option value="consulta">Consulta</option>
-                              <option value="vacinacao">Vacinação</option>
-                              <option value="estetica">Estética</option> -->
-                            </select>
+                            <select id="day-select"></select>
 
                             <!-- Idem anterior -->
                             <select id="hour-select"> 
@@ -377,6 +372,11 @@
                                 <div class="promotion">De: R$12,00 por</div>
                                 <div class="price">R$9,50</div>
                             </div>
+                            <div align="center">
+                                <button class="sub-add" onclick="sub('p1')">-</button>
+                                <input class="qtd" type="number" name="p1" id="p1" value="0" disabled>
+                                <button class="sub-add" onclick="add('p1')">+</button>
+                            </div>
                             <div class="btn-buy-div">
                                 <button class="btn-buy">Comprar</button>
                             </div>
@@ -391,6 +391,11 @@
                             <div class="offer">
                                 <div class="promotion">De: R$23,00 por</div>
                                 <div class="price">R$17,80</div>
+                            </div>
+                            <div align="center">
+                                <button class="sub-add" onclick="sub('p2')">-</button>
+                                <input class="qtd" type="number" name="p2" id="p2" value="0" disabled>
+                                <button class="sub-add" onclick="add('p2')">+</button>
                             </div>
                             <div class="btn-buy-div">
                                 <button class="btn-buy">Comprar</button>
@@ -407,6 +412,11 @@
                                 <div class="promotion"></div>
                                 <div class="price">R$190,00</div>
                             </div>
+                            <div align="center">
+                                <button class="sub-add" onclick="sub('p3')">-</button>
+                                <input class="qtd" type="number" name="p3" id="p3" value="0" disabled>
+                                <button class="sub-add" onclick="add('p3')">+</button>
+                            </div>
                             <div class="btn-buy-div">
                                 <button class="btn-buy">Comprar</button>
                             </div>
@@ -421,6 +431,11 @@
                             <div class="offer">
                                 <div class="promotion"></div>
                                 <div class="price">R$92,50</div>
+                            </div>
+                            <div align="center">
+                                <button class="sub-add" onclick="sub('p4')">-</button>
+                                <input class="qtd" type="number" name="p4" id="p4" value="0" disabled>
+                                <button class="sub-add" onclick="add('p4')">+</button>
                             </div>
                             <div class="btn-buy-div">
                                 <button class="btn-buy">Comprar</button>
@@ -439,6 +454,11 @@
                             <div class="offer">
                                 <div class="promotion">De: R$43,00 por</div>
                                 <div class="price">R$39,50</div>
+                            </div>
+                            <div align="center">
+                                <button class="sub-add" onclick="sub('p5')">-</button>
+                                <input class="qtd" type="number" name="p5" id="p5" value="0" disabled>
+                                <button class="sub-add" onclick="add('p5')">+</button>
                             </div>
                             <div class="btn-buy-div">
                                 <button class="btn-buy">Comprar</button>
@@ -494,5 +514,11 @@
         <footer id="footer">
             PetCare é uma marca não registrada e de dominio público
         </footer>
+
+        <script>
+            (function() {
+                fillCalendarDays();
+            })();
+        </script>
     </body>
 </html>
