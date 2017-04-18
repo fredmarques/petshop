@@ -101,7 +101,7 @@ function makeNewPet() {
 
 function fillCalendarDays() {
 	var today = new Date();
-	var block = '';
+	var block = '<option value="" hidden>Escolha o dia</option>';
 	for(i = 0; i < 70; i++){
 		today.setDate(today.getDate() + i)
 		block += '<option value="">'+translateDay(today.getDay())+', '+today.getDate()+' de '+translateMonth(today.getMonth())+'</option>';
@@ -152,4 +152,13 @@ function translateMonth(month) {
 		return 'Novembro';
 	else if(month == 11)
 		return 'Dezembro';
+}
+
+function sub(id) {
+	if(document.getElementById(id).value > 0)
+		document.getElementById(id).value = (Number(document.getElementById(id).value) - 1); 
+}
+
+function add(id) {
+	document.getElementById(id).value = (Number(document.getElementById(id).value) + 1); 
 }
