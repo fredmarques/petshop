@@ -94,3 +94,7 @@ function logout() {
 	document.getElementById('login').style.display = 'block';
 	document.getElementById('logout').style.display = 'none';
 }
+
+function makeNewPet() {
+	alert('Você cadastrou seu novo pet');
+}
