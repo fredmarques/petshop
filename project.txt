@@ -2,10 +2,11 @@ Grupo:
 Frederico de Azevedo Marques
 8936926
 
-Bruno Pinto Ferraz fabri
-41548844
+Bruno Pinto Ferraz Fabbri
+4154844
 
 Arquivos:
+
 ./css/style.css     -> Arquivo que contem todo o CSS do trabalho
 ./css/calendar.css  -> Arquivo que contem os estilos do calendário que seria utilizado para agendar serviços (falta de tempo para implementar)
 
@@ -23,31 +24,8 @@ Arquivos:
 
 ./READE.md          -> Markdown estilo github para quem acessar o repositório entenda do que o projeto se trata.
 
+
 Comentários:
 
-O projeto não foi totalmente implementado tal como as requisições.
-
-Os sequintes itens não foram implementados por falta de tempo e disponibilidade dos integrantes do grupo. O trabalho
-foi idealizado para o dobro de integrantes do que temos, mas como não achamos nenhum grupo com vagas abertas, decidimos fazer
-nos mesmos.
-
-Gostariamos assim de fazer o seguinte pedido: Considerar o comentário acima e não penalizar demais a nossa nota final.
-
-
-Items não implementados:
-
-- Clientes podem agendar um horário via web para serviços
-
-    - O calendário deve exibir janelas de horários (slots) livres para serem usadas. Clientes não podem cancelar um horário.
-
-    - O calendário deve cobrir, pelo menos, 10 semanas com, pelo menos 10 slots por dia.
-
-    - Horários ocupados mostram o nome e foto do serviço e o nome do animal do cliente que fez a reserva.
-
-    - Cada slot livre deve mostrar um serviço ou vazio. Quem quiser fazer com mais de um serviço por slot, pode.
-
-    - Recomendo fazer com apenas um serviço por slot.
-
-- Venda de produtos: Produtos são selecionados, sua quantidade escolhida e são incluídos num carrinho. Os produtos são comprados, com o uso de um número de cartão de crédito. A quantidade do produto vendido é subtraída da quantidade em estoque e somada a quantidade vendida. Carrinhos são esvaziados apenas no pagamento ou pelos clientes.
-
-- Venda de serviços: Serviços são selecionados e pagos, no momento da contratação, com um número de cartão. Administradores podem ver e editar todos os produtos (podem modificar a quantidade em estoque, por exemplo) e serviços.
+O carrinho do seriço não foi implementado porque a equipe avaliou que o serviço poderia ser implementado diretamente no calendário
+e assim não faria sentido contrar 3 serviços e fazer checkout. O cliente pagaria por cada serviço agendado.
