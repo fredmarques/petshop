@@ -117,14 +117,14 @@
                                         <label for="newPetId">Id</label>
                                         <input type="text" id="newPetId" name="newPetId" placeholder="Id">
 
-                                        <label for="newPetPhone">Raça</label>
-                                        <input type="text" id="newPetPhone" name="newPetPhone" placeholder="Telefone">
+                                        <label for="newPetRace">Raça</label>
+                                        <input type="text" id="newPetRace" name="newPetRace" placeholder="Raça">
 
-                                        <label for="newPetEmail">Idade</label>
-                                        <input type="text" id="newPetEmail" name="newPetEmail" placeholder="Email">
+                                        <label for="newPetAge">Idade</label>
+                                        <input type="text" id="newPetAge" name="newPetAge" placeholder="Idade">
                                     
-                                        <label for="pass">Link para foto do seu pet</label>
-                                        <input type="password" id="newPetPhoto" name="newPetPhoto" placeholder="Local da foto de usuário">
+                                        <label for="newPetImage">Link para foto do seu pet</label>
+                                        <input type="text" id="newPetImage" name="newPetImage" placeholder="Local da foto do seu pet">
 
                                         <input type="button" value="Criar usuário" onclick="makeNewPet()">
                                     </div>
@@ -174,7 +174,7 @@
                                         <input type="text" id="newClientPhone" name="newClientPhone" placeholder="Telefone">
 
                                         <label for="newClientAddress">Endereço</label>
-                                        <input type="text" id="newClientAddress" name="newClientAddress" placeholder="Telefone">
+                                        <input type="text" id="newClientAddress" name="newClientAddress" placeholder="Endereço">
 
 
                                         <label for="newClientEmail">Email</label>
@@ -235,7 +235,7 @@
                             <h2>Cadastrar novo serviço</h2>
 
                             <form action="">
-                                <label for="productname">Nome do produto</label>
+                                <label for="productname">Nome do serviço</label>
                                 <input type="text" id="productname" name="productname" placeholder="Nome do serviço">                                
 
                                 <label for="serviceId">ID do serviço</label>
@@ -331,25 +331,21 @@
                             <h2>Cadastrar novo produto</h2>
                             <form action="">
                                 <label for="productname">Nome do produto</label>
-                                <input type="text" id="productname" name="productname" placeholder="Nome do produto">                                
+                                <input type="text" id="productname" name="productname" placeholder="Nome do produto">
 
                                 <label for="productId">ID do produto</label>
                                 <input type="text" id="productId" name="productId" placeholder="Id do produto">                                
-
-                                <label for="productDescription">Descrição do produto</label>
-                                <input type="text" id="productDescription" name="productDescription" placeholder="Descrição do produto">                                
+                                <label for="productdescription">Descrição</label>
+                                <textarea id="productdescription" name="productdescription" placeholder="Descrição do novo produto"></textarea>                                
 
                                 <label for="productPrice">Preço do produto</label>
-                                <input type="text" id="productPrice" name="productPrice" placeholder="Preço do produto">                                
+                                <input type="text" id="productPrice" name="productPrice" placeholder="Preço do produto">
 
                                 <label for="productStock">Quantidade do produto em estoque</label>
-                                <input type="text" id="productStock" name="productStock" placeholder="Quantidade em estoque">                                
+                                <input type="text" id="productStock" name="productStock" placeholder="Quantidade em estoque">
 
                                 <label for="productSold">Quantidade do produto que já foi vendido</label>
-                                <input type="text" id="productSold" name="productSold" placeholder="Quantidade vendida">                                
-
-                                <label for="productdescription">Descrição</label>
-                                <textarea id="productdescription" name="productdescription" placeholder="Descrição do novo produto"></textarea>
+                                <input type="text" id="productSold" name="productSold" placeholder="Quantidade vendida">
 
                                 <label for="productImageURL">URL da imagem</label>
                                 <input type="text" id="productImageURL" name="productImageURL" placeholder="URL da imagem">
