@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import logo from '../../logo.svg';
 import './App.css';
-import Navigation from '../navigation/Navigation';
-import Footer from '../footer/Footer';
-import Content from '../content/Content';
+import Navigation from '../shell/navigation/Navigation';
+import Footer from '../shell/footer/Footer';
+import Content from '../shell/content/Content';
 
 class App extends Component {
   render() {
@@ -21,7 +21,3 @@ class App extends Component {
 }
 
 export default App;
-
-        // <Navigation />
-        // <Content />
-        // <Footer />
