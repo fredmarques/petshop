@@ -12,6 +12,9 @@
   "devDependencies": {
     "react-scripts": "1.0.7"
   },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
