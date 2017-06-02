@@ -4,7 +4,7 @@ class Home extends Component {
     render() {
         return (
             <div>
-               <p> Home page aqui!</p> 
+               <p> This page is a WIP </p>
             </div>
         );
     }
