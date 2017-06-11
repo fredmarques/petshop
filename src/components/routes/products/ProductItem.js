@@ -50,19 +50,15 @@ class ProductItem extends Component {
     }
     render() {
         return (
-            <div style={{marginTop: 50, marginBottom: 50}}>
-                <Row center="lg">
-                    <Col xs={3} md={3} lg={12}>
-                        <Image width={this.width} height={this.height} src={this.image} alt={this.alt} rounded />
-                    </Col>
+            <div style={{marginTop: 50, marginBottom: 50, padding:"0 10px"}}>
+                <Row center="lg" style={{justifyContent: "center", alignItems: "center"}}>
+                    <Image width={this.width} height={this.height} src={this.image} alt={this.alt} rounded />
                 </Row>
                 <Row center="lg">
-                    <Col style={{padding: "0 60px"}} xs={3} md={3} lg={12}>
-                        <h3>{this.heading}</h3>
-                        <p style={{"textAlign": "justify"}}>{this.body}</p>
-                    </Col>
+                    <h3>{this.heading}</h3>
+                    <p style={{"textAlign": "justify", padding: "5px"}}>{this.body}</p>
                 </Row>
-                <Row center="lg">
+                <Row center="lg" style={{justifyContent: "center", alignItems: "center"}}>
                     <Form inline>
                         <FormGroup>
                             <Button bsStyle="primary" bsSize="small" onClick={this.decreseValue}><Glyphicon glyph="minus" /></Button>
