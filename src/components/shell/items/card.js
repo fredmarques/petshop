@@ -16,7 +16,7 @@ class Card extends Component {
         return (
             <div>
                 <Media>
-                    <Media.Left aling="top">
+                    <Media.Left align="top">
                         <Image width={this.width} height={this.height} src={this.image} alt={this.alt} rounded />
                     </Media.Left>
                     <Media.Body>
