@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Field, reduxForm} from 'redux-form';
 import { Link } from 'react-router-dom';
 import  { connect } from 'react-redux';
+import './Login.css';
 
 class Login extends Component {
     renderField(field) {
@@ -11,9 +12,9 @@ class Login extends Component {
         console.log('className ', className);
         return (
             <div className={className}>
-                <label>{field.label}</label>
                 <input className="form-control"
                 type={field.type}
+                placeholder={field.placeholder}
                 {...field.input}/>
                 <div className="text-help">
                     {touched ? error : ''}
@@ -30,22 +31,26 @@ class Login extends Component {
     render() {
         const { handleSubmit } = this.props;
         return (
-            <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className={'form-inline'}>
-                <Field
-                    name="email"
-                    label="Email"
-                    type="text"
-                    component={this.renderField}
-                />
-                <Field
-                    name="password"
-                    label="Password"
-                    type="password"
-                    component={this.renderField}
-                />
-                <button type="submit" className="btn btn-primary">Submit</button>
-                <Link to="/" className="btn btn-danger">Cancel</Link>
-            </form>
+            <div className={'loginForm'}>
+                <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className={'form-inline'}>
+                    <Field
+                        name="email"
+                        label="Email"
+                        placeholder="E-mail"
+                        type="text"
+                        component={this.renderField}
+                    />
+                    <Field
+                        name="password"
+                        label="Password"
+                        placeholder="Senha"
+                        type="password"
+                        component={this.renderField}
+                    />
+                    <button type="submit" className="btn btn-primary">Entrar</button>
+                    <Link to="/" className="btn btn-danger">Cancelar</Link>
+                </form>
+            </div>
         );
     }
 

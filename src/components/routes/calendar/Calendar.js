@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './react-big-calendar.css'
 import BigCalendar from 'react-big-calendar';
+import './Calendar.css';
 import moment from 'moment';
 
 
@@ -13,14 +14,14 @@ const MyCalendar = props => (
     <BigCalendar
       events={myEventsList}
       startAccessor={new Date(2014, 0, 1)}
-      endAccessor={new Date(2050, 0, 1)}
+      endAccessor={new Date(2020, 11, 1)}
     />
   </div>
 );
 class Calendar extends Component {
     render() {
         return (
-            <div className={"rbc-calendar demo"}>
+            <div className={"rbc-calendar container-fluid"}>
                <MyCalendar/>
             </div>
         );
