@@ -20,7 +20,7 @@ const MyCalendar = props => (
 class Calendar extends Component {
     render() {
         return (
-            <div>
+            <div className={"rbc-calendar demo"}>
                <MyCalendar/>
             </div>
         );

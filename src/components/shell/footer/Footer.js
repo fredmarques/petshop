@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <div>
-        <footer>
+            <footer>
                 <p>PetCare é uma marca não registrada e de dominio público</p>
             </footer>
         </div>

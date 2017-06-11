@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
-import { BrowserRouter} from 'react-router-dom';
+import { Nav, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 export default class TitleBar extends Component {
@@ -17,11 +16,11 @@ export default class TitleBar extends Component {
     render() {
         return (
                 <Nav bsStyle="tabs">
-                    <LinkContainer to={"/home"} exact={true} activeClassName="active">
+                    <LinkContainer to={"/home"}>
                         <NavItem> Home </NavItem>
                     </LinkContainer>
 
-                    <LinkContainer to={"/services"} exact={true} activeClassName="active">
+                    <LinkContainer to={"/services"} >
                         <NavItem >Serviços</NavItem>
                     </LinkContainer>
 

@@ -20,6 +20,7 @@ class Content extends Component {
                 <Route path="/about" component={About} />
                 <Route path="/services" component={Services} />
                 <Route path="/login" component={Login} />
+                <Route path="/" component={Home} />
             </Switch>
         );
     }
