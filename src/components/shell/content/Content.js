@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from '../../routes/home/Home';
 import Services from '../../routes/services/Services';
-import Products from '../../routes/products/Products';
+import Products from '../../routes/products/ProductsContainer';
 import Contact from '../../routes/contact/Contact';
 import Calendar from '../../routes/calendar/Calendar';
 import About from '../../routes/about/About';

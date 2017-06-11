@@ -1,8 +1,40 @@
-export const ACTION = 'ACTION_TYPE';
-export function action_fn() {
+import shop from '../api/shop'
+import * as types from '../constants/ActionTypes'
 
-    return {
-        TYPE: ACTION,
-        payload: []
-    }
+const receiveProducts = products => ({
+  type: types.RECEIVE_PRODUCTS,
+  products: products
+})
+
+export const getAllProducts = () => dispatch => {
+  shop.getProducts(products => {
+    dispatch(receiveProducts(products))
+  })
+}
+
+const addToCartUnsafe = (productId, quantity) => ({
+  type: types.ADD_TO_CART,
+  productId
+})
+
+export const addToCart = (productId, quantity) => (dispatch, getState) => {
+  if (getState().products.byId[productId].inventory > 0) {
+    dispatch(addToCartUnsafe(productId, quantity))
+  }
+}
+
+export const checkout = products => (dispatch, getState) => {
+  const { cart } = getState()
+
+  dispatch({
+    type: types.CHECKOUT_REQUEST
+  })
+  shop.buyProducts(products, () => {
+    dispatch({
+      type: types.CHECKOUT_SUCCESS,
+      cart
+    })
+    // Replace the line above with line below to rollback on failure:
+    // dispatch({ type: types.CHECKOUT_FAILURE, cart })
+  })
 }
