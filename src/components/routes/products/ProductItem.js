@@ -50,7 +50,7 @@ class ProductItem extends Component {
     }
     render() {
         return (
-            <div style={{marginTop: 50}}>
+            <div style={{marginTop: 50, marginBottom: 50}}>
                 <Row center="lg">
                     <Col xs={3} md={3} lg={12}>
                         <Image width={this.width} height={this.height} src={this.image} alt={this.alt} rounded />
@@ -59,7 +59,7 @@ class ProductItem extends Component {
                 <Row center="lg">
                     <Col style={{padding: "0 60px"}} xs={3} md={3} lg={12}>
                         <h3>{this.heading}</h3>
-                        <p style={{"text-align": "justify"}}>{this.body}</p>
+                        <p style={{"textAlign": "justify"}}>{this.body}</p>
                     </Col>
                 </Row>
                 <Row center="lg">
