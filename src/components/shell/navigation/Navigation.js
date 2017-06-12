@@ -28,7 +28,7 @@ export default class TitleBar extends Component {
           <NavItem >Produtos</NavItem>
         </LinkContainer>
 
-        <LinkContainer to="/contacts">
+        <LinkContainer to="/contact">
           <NavItem >Contato</NavItem>
         </LinkContainer>
 
