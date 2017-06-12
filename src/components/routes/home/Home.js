@@ -6,7 +6,6 @@ import cat from '../../../assets/cat.jpeg';
 import tiger from '../../../assets/tiger.jpeg';
 import './Home.css';
 
-
 class Home extends Component {
     render() {
         return (
