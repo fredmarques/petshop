@@ -57,7 +57,7 @@ class Contact extends Component {
               type="input"
               component={
                 ({ input }) => (
-                  <textarea {...input} textarea className="form-control message" rows="7" id="mensagem" placeholder="Mensagem" />)}
+                  <textarea {...input} className="form-control message" rows="7" id="mensagem" placeholder="Mensagem" />)}
             />
             <br />
             <button className="btn btn-success">Enviar</button>
