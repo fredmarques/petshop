@@ -28,17 +28,24 @@ class Cart extends Component {
   render() {
     return (
       <div className="container-fluid">
+        {(this.props.products.length > 0
+          ? <Row>
+              <Col xs={12}>
+                <h2>Seu carrinho de compras </h2>
+              </Col>
+              <Col xs={12}>
+                <Button bsStyle="success" onClick={this.checkout}>Finalizar compra</Button>
+                <Button bsStyle="danger" onClick={this.clear}>Limpar carrinho</Button>
+              </Col>
+            </Row>
+          : <Row>
+              <Col xs={12}>
+                <h2>Seu carrinho está vazio </h2>
+              </Col>
+            </Row>
+        )}
         <Row>
-          <Col xs={12}>
-            <h2>Seu carrinho de compras </h2>
-          </Col>
-          <Col xs={12}>
-            <Button bsStyle="success" onClick={this.checkout}>Finalizar compra</Button>
-            <Button bsStyle="danger" onClick={this.clear}>Limpar carrinho</Button>
-          </Col>
-        </Row>
-        <Row>
-            {this.props.products.map(product => <CartItem key={product.id} product={product} />)}
+          {this.props.products.map(product => <CartItem key={product.id} product={product} />)}
         </Row>
       </div>
     );
