@@ -220,3 +220,11 @@ td.rdtYear:hover {
   font-size: 1.2em;
   margin-top: 37px;
 }
+
+.scheduleForm select, .scheduleForm button, .scheduleForm input{
+  margin-top: 20px;
+}
+
+.scheduleForm {
+  margin-bottom: 30px;
+}

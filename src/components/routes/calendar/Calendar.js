@@ -59,13 +59,31 @@ BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
 
 class Calendar extends Component {
     onSubmit(values) {
-        const newEvent = {
-            title: values.service,
-            start: values.date.toDate(),
-            end: values.date.add(1, 'hour'),
-            desc: `Agendado para ${'fulano'}`
+
+        // Check if service was selected
+        if(values.service === undefined) {
+            alert('Escolha um serviço')
+
+        // Check if data was selected
+        } else if(values.date === undefined){
+            alert('Selecione uma data')
+
+        } else {
+            const newEvent = {
+                title: values.service,
+                start: values.date.toDate(),
+                end: values.date.add(1, 'hour'),
+                desc: `Agendado para ${'fulano'}`
+            }
+            this.props.addEvent(newEvent);
+            alert(  newEvent.title + ' agendada para o dia ' +
+                    newEvent.start.toString().substring(8,10) + ' de ' + 
+                    newEvent.start.toString().substring(4,7) + ' de ' + 
+                    newEvent.start.toString().substring(11,15) + ' as ' + 
+                    newEvent.start.toString().substring(16,21) + ' horas');
+            values.service = '';
+            values.date = '';
         }
-        this.props.addEvent(newEvent);
     }
 
     render() {
@@ -73,7 +91,7 @@ class Calendar extends Component {
         console.log(this.props);
         return (
             <div className={"rbc-calendar container-fluid"}>
-                <div className={'loginForm'}>
+                <div className={'scheduleForm'}>
                     <h3>Agende seu serviço</h3>
                     <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className={'form-inline'}>
                         <Field
@@ -83,6 +101,7 @@ class Calendar extends Component {
                             type="text"
                             component={({input}) => (
                                 <select {...input}>
+                                <option value="">Escolha um serviço</option>
                                 <option value="consulta">Consulta</option>
                                 <option value="vacina">Vacina</option>
                                 <option value="banhoTosa">Banho e tosa</option>
@@ -97,8 +116,7 @@ class Calendar extends Component {
                                 ({ input }) => (
                                     <DateTime {...input} locale="pt-br" placeholder="Dia e hora" />)}
                         />
-                        <button type="submit" className="btn btn-primary">Entrar</button>
-                        <Link to="/" className="btn btn-danger">Cancelar</Link>
+                        <button type="submit" className="btn btn-success">Agendar</button>
                     </form>
                 </div>
                 <BigCalendar
