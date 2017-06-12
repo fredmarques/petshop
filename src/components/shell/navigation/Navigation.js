@@ -36,10 +36,6 @@ export default class TitleBar extends Component {
           <NavItem >Calendário</NavItem>
         </LinkContainer>
 
-        <LinkContainer to="/about">
-          <NavItem >Sobre</NavItem>
-        </LinkContainer>
-
         <LinkContainer to="/login">
           <NavItem >Login</NavItem>
         </LinkContainer>
