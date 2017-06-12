@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CartList from './CartList';
 import CartItem from './CartItem';
 import { Button } from 'react-bootstrap';
 import { Row, Col } from 'react-flexbox-grid';
@@ -7,7 +6,10 @@ import { Row, Col } from 'react-flexbox-grid';
 class Cart extends Component {
   constructor(props) {
     super(props);
-    this.products = this.props.products;
+    this.state = {
+      products: this.props.products
+    }
+    // this.products = this.props.products;
     this.total = this.props.total;
     this.onCheckoutClick = this.props.onCheckoutClick;
     this.onClearCartClick = this.props.onClearCartClick;
@@ -15,17 +17,13 @@ class Cart extends Component {
     this.clear = this.clear.bind(this);
   }
 
-  // componentDidMount() {
-  //   if (!this.props.products) {
-  //     const { id } = this.props.match.params;
-  //     this.props.fetchPost(id);
-  //   }
-  // }
   checkout(){
     this.onCheckoutClick()
+    this.setState({product: []})
   }
   clear(){
     this.onClearCartClick();
+    this.setState({product: []})
   }
   render() {
     return (
@@ -40,7 +38,7 @@ class Cart extends Component {
           </Col>
         </Row>
         <Row>
-            {this.products.map(product => <CartItem key={product.id} product={product} />)}
+            {this.props.products.map(product => <CartItem key={product.id} product={product} />)}
         </Row>
       </div>
     );
