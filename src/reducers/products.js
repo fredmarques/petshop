@@ -6,7 +6,7 @@ const products = (state, action) => {
     case ADD_TO_CART:
       return {
         ...state,
-        inventory: state.inventory - action.quantity
+        inventory: state.inventory - action.payload.quantity
       }
     default:
       return state

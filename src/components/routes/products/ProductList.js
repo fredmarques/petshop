@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Col } from 'react-flexbox-grid';
 
-class Products extends Component {
+class ProductsList extends Component {
     constructor(props) {
         super(props);
         // props
@@ -25,4 +25,4 @@ class Products extends Component {
     }
 }
 
-export default Products;
+export default ProductsList;

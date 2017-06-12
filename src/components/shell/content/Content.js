@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Home from '../../routes/home/Home';
 import Services from '../../routes/services/Services';
 import Products from '../../routes/products/ProductsContainer';
+import Cart from '../../routes/cart/CartContainer';
 import Contact from '../../routes/contact/Contact';
 import Calendar from '../../routes/calendar/Calendar';
 import About from '../../routes/about/About';
@@ -20,6 +21,7 @@ class Content extends Component {
                 <Route path="/about" component={About} />
                 <Route path="/services" component={Services} />
                 <Route path="/login" component={Login} />
+                <Route path="/cart" component={Cart} />
                 <Route path="/" component={Home} />
             </Switch>
         );

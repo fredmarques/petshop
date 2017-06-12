@@ -7,74 +7,76 @@ import { Row, Col } from 'react-flexbox-grid';
 // </Col>
 
 class ProductItem extends Component {
-    constructor(props) {
-        super(props);
-        // props
-        this.id = this.props.product.id;
-        this.image = this.props.product.image;
-        this.inventory = this.props.product.inventory;
-        this.alt = this.props.product.alt;
-        this.width = this.props.product.width;
-        this.height = this.props.product.height;
-        this.heading = this.props.product.heading;
-        this.body = this.props.product.body;
-        this.onAddToCartClick = this.props.onAddToCartClick;
-        // component state
-        this.state = {
-            value: 0,
-            name: this.props.name
-        }
-        // bindings
-        this.incrementValue = this.incrementValue.bind(this);
-        this.decreseValue = this.decreseValue.bind(this);
+  constructor(props) {
+    super(props);
+    // props
+    this.id = this.props.product.id;
+    this.image = this.props.product.image;
+    this.inventory = this.props.product.inventory;
+    this.alt = this.props.product.alt;
+    this.width = this.props.product.width;
+    this.height = this.props.product.height;
+    this.heading = this.props.product.heading;
+    this.body = this.props.product.body;
+    this.onAddToCartClick = this.props.onAddToCartClick;
+    // component state
+    this.state = {
+      value: 0,
+      name: this.props.name
     }
-    incrementValue() {
-        const currrentValue = this.state.value;
-        const nextValue = currrentValue + 1;
-        this.setState({
-            value: nextValue
-        })
+    // bindings
+    this.incrementValue = this.incrementValue.bind(this);
+    this.decreseValue = this.decreseValue.bind(this);
+  }
+  incrementValue() {
+    const currrentValue = this.state.value;
+    const nextValue = currrentValue + 1;
+    this.setState({
+      value: nextValue
+    })
+  }
+  decreseValue() {
+    const currrentValue = this.state.value;
+    const nextValue = currrentValue > 0 ? currrentValue - 1 : 0;
+    this.setState({
+      value: nextValue
+    })
+  }
+  addToCart(quantity) {
+    if (quantity > 0) {
+      this.onAddToCartClick(quantity);
+      this.setState({
+        value: 0
+      });
     }
-    decreseValue() {
-        const currrentValue = this.state.value;
-        const nextValue = currrentValue > 0 ? currrentValue - 1 : 0;
-        this.setState({
-            value: nextValue
-        })
-    }
-    addToCart(quantity){
-        this.onAddToCartClick(quantity);
-        this.setState({
-            value: 0
-        });
-    }
-    render() {
-        return (
-            <div style={{marginTop: 50, marginBottom: 50}}>
-                <Row center="lg">
-                    <Col xs={3} md={3} lg={12}>
-                        <Image width={this.width} height={this.height} src={this.image} alt={this.alt} rounded />
-                    </Col>
-                </Row>
-                <Row center="lg">
-                    <Col style={{padding: "0 60px"}} xs={3} md={3} lg={12}>
-                        <h3>{this.heading}</h3>
-                        <p style={{"textAlign": "justify"}}>{this.body}</p>
-                    </Col>
-                </Row>
-                <Row center="lg">
-                    <Form inline>
-                        <FormGroup>
-                            <Button bsStyle="primary" bsSize="small" onClick={this.decreseValue}><Glyphicon glyph="minus" /></Button>
-                            <FormControl style={{ width: "60px" }} type="text" value={this.state.value} disabled />
-                            <Button bsStyle="primary" bsSize="small" onClick={this.incrementValue}><Glyphicon glyph="plus" /></Button>
-                            <Button bsStyle="primary" bsSize="small" onClick={() => this.addToCart(this.state.value)}><Glyphicon glyph="shopping-cart" /></Button>
-                        </FormGroup>
-                    </Form>
-                </Row>
-            </div>
-        );
-    }
+  }
+  render() {
+    return (
+      <div style={{ marginTop: 50, marginBottom: 50 }}>
+        <Row center="lg">
+          <Col xs={3} md={3} lg={12}>
+            <Image width={this.width} height={this.height} src={this.image} alt={this.alt} rounded />
+          </Col>
+        </Row>
+        <Row center="lg">
+          <Col style={{ padding: "0 60px" }} xs={3} md={3} lg={12}>
+            <h3>{this.heading}</h3>
+            <p style={{ "textAlign": "justify" }}>{this.body}</p>
+          </Col>
+        </Row>
+        <Row center="lg">
+          <Form inline>
+            <FormGroup>
+              <Button bsStyle="primary" bsSize="small" onClick={this.decreseValue}><Glyphicon glyph="minus" /></Button>
+              <FormControl style={{ width: "60px" }} type="text" value={this.state.value} disabled />
+              <Button bsStyle="primary" bsSize="small" onClick={this.incrementValue}><Glyphicon glyph="plus" /></Button>
+              <Button bsStyle="primary" bsSize="small" onClick={() => this.addToCart(this.state.value)}><Glyphicon glyph="shopping-cart" /></Button>
+            </FormGroup>
+          </Form>
+        </Row>
+      </div>
+    );
+  }
 }
 
 export default (ProductItem);

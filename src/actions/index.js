@@ -14,7 +14,7 @@ export const getAllProducts = () => dispatch => {
 
 const addToCartUnsafe = (productId, quantity) => ({
   type: types.ADD_TO_CART,
-  productId
+  payload: {productId, quantity}
 })
 
 export const addToCart = (productId, quantity) => (dispatch, getState) => {
@@ -25,6 +25,7 @@ export const addToCart = (productId, quantity) => (dispatch, getState) => {
 
 export const checkout = products => (dispatch, getState) => {
   const { cart } = getState()
+  console.log('chamei o checkout')
 
   dispatch({
     type: types.CHECKOUT_REQUEST
@@ -36,5 +37,12 @@ export const checkout = products => (dispatch, getState) => {
     })
     // Replace the line above with line below to rollback on failure:
     // dispatch({ type: types.CHECKOUT_FAILURE, cart })
+  })
+}
+
+export const clearCart = () => (dispatch, getState) => {
+  console.log('fui chamado!');
+  dispatch({
+    type: types.CLEAR_CART_REQUEST,
   })
 }
