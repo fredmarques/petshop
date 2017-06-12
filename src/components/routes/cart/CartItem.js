@@ -36,12 +36,14 @@ class CartItem extends Component {
     render() {
         return (
             <div style={{marginTop: 20}} >
-              <Col sm={2} md={2} lg={2}>
+              <Col xs={12} sm={4} style={{textAlign: "center"}}>
                 <Image width={this.width} height={this.height} src={this.image} alt={this.alt} rounded />
               </Col>
-              <Col sm={4} md={4} lg={4}>
+              <Col xs={12} sm={6} style={{textAlign: "left", backgroundColor: "white"}}>
                 <h4>{`${this.heading} (${this.quantity}un)`}</h4>
                 <p>{this.body}</p>
+              </Col>
+              <Col sm={2}>
               </Col>
             </div>
         );

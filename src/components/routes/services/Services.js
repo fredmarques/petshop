@@ -11,12 +11,12 @@ class Services extends Component {
         return (
             <Grid fluid>
                 <Row> 
-                    <Col xs={12} md={12} lg={12}>
+                    <Col xs={12}>
                         <Card width={64} height={64} image={dog} alt={'dog'} heading={heading} body={body}/>
                     </Col>
                 </Row>
                 <Row> 
-                    <Col xs={12} md={12} lg={12}>
+                    <Col xs={12}>
                         <Card width={64} height={64} image={dog} alt={'dog'} heading={heading} body={body}/>
                     </Col>
                 </Row>
