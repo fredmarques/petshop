@@ -1,13 +1,70 @@
 import React, { Component } from 'react';
+import { Field, reduxForm} from 'redux-form';
+import { Link } from 'react-router-dom';
+import  { connect } from 'react-redux';
+import './Contact.css';
 
 class Contact extends Component {
-    render() {
-        return (
-            <div>
-               <p>This page is a WIP</p> 
-            </div>
-        );
-    }
+  renderField(field) {
+    const { meta: { touched, error } } = field
+    const className = '';
+    console.log('className ', className);
+    return (
+      <div className={className}>
+        <input className="form-control"
+        type={field.type}
+        placeholder={field.placeholder}
+        {...field.input}/>
+        <div className="text-help">
+          {touched ? error : ''}
+        </div>
+      </div>
+    );
+	}
+
+  onSubmit(values){
+    this.props.createPost(values, () => {
+      this.props.history.push('/');
+    })
+  }
+
+  render() {
+    const { handleSubmit } = this.props;
+    return (
+    	<div className="container">
+	      <div className={'contactForm'}>
+	        <h3>Entre em contato conosco</h3>
+	        <form className="form-group">
+	          <Field
+	            name="nome"
+	            placeholder="Nome"
+	            type="text"
+	            component={this.renderField}
+	          />
+	          <Field
+	            name="email"
+	            placeholder="E-mail"
+	            type="text"
+	            component={this.renderField}
+	          />
+	          <Field
+	            name="telefone"
+	            placeholder="Telefone"
+	            type="text"
+	            component={this.renderField}
+	          />
+	          <textarea class="form-control message" rows="7" id="mensagem" placeholder="Mensagem"></textarea>
+	          <br/>
+	          <button className="btn btn-success">Enviar</button>
+	        </form>
+	      </div>
+      </div>
+    );
+  }
 }
 
-export default Contact;
+export default reduxForm({
+  form: 'Contact'
+})(
+  connect(null, {})(Contact)
+);
