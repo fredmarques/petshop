@@ -14,7 +14,7 @@ import { getAllProducts } from './actions';
 // const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 // import registerServiceWorker from './registerServiceWorker';
 
-const middleware = [ thunk ];
+const middleware = [ thunk];
 if (process.env.NODE_ENV !== 'production') {
   middleware.push(createLogger());
 }
