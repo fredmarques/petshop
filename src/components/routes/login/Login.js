@@ -7,7 +7,6 @@ import './Login.css';
 class Login extends Component {
     renderField(field) {
         const { meta: { touched, error } } = field
-        // const className = `form-group ${touched && error ? 'has-danger' : ''}`
         const className = '';
         console.log('className ', className);
         return (
@@ -32,6 +31,7 @@ class Login extends Component {
         const { handleSubmit } = this.props;
         return (
             <div className={'loginForm'}>
+                <h3>Acesse sua conta</h3>
                 <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className={'form-inline'}>
                     <Field
                         name="email"

@@ -14,7 +14,7 @@ class Card extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="serviceRow">
                 <Media>
                     <Media.Left align="top">
                         <Image width={this.width} height={this.height} src={this.image} alt={this.alt} rounded />
