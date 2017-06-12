@@ -40,17 +40,14 @@ export const getQuantity = (state, productId) =>
 export const getAddedIds = state => state.addedIds
 
 const cart = (state = initialState, action) => {
-  console.log('dentro do cart', action.type);
   switch (action.type) {
     case CLEAR_CART_REQUEST:
-      console.log('limpando o cart')
       return initialState;
     case CHECKOUT_REQUEST:
       return initialState
     case CHECKOUT_FAILURE:
       return action.cart
     default:
-      console.log('retornando default dentro do cart')  
       return {
         addedIds: addedIds(state.addedIds, action),
         quantityById: quantityById(state.quantityById, action)

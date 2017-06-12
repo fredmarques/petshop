@@ -1,31 +1,123 @@
-import React, { Component } from 'react';
 import './react-big-calendar.css'
-import BigCalendar from 'react-big-calendar';
 import './Calendar.css';
+import React, { Component } from 'react';
+import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
+import { Field, reduxForm } from 'redux-form';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import DateTime from 'react-datetime';
+import { addEvent } from '../../../actions';
+import { getAllEvents } from '../../../reducers/events';
 
 
-// Setup the localizer by providing the moment (or globalize) Object
-// to the correct localizer.
+moment.defineLocale('pt-br', {
+        months : 'janeiro_fevereiro_março_abril_maio_junho_julho_agosto_setembro_outubro_novembro_dezembro'.split('_'),
+        monthsShort : 'jan_fev_mar_abr_mai_jun_jul_ago_set_out_nov_dez'.split('_'),
+        weekdays : 'domingo_segunda-feira_terça-feira_quarta-feira_quinta-feira_sexta-feira_sábado'.split('_'),
+        weekdaysShort : 'dom_seg_ter_qua_qui_sex_sáb'.split('_'),
+        weekdaysMin : 'dom_2ª_3ª_4ª_5ª_6ª_sáb'.split('_'),
+        longDateFormat : {
+            LT : 'HH:mm',
+            L : 'DD/MM/YYYY',
+            LL : 'D [de] MMMM [de] YYYY',
+            LLL : 'D [de] MMMM [de] YYYY [às] LT',
+            LLLL : 'dddd, D [de] MMMM [de] YYYY [às] LT'
+        },
+        calendar : {
+            sameDay: '[Hoje às] LT',
+            nextDay: '[Amanhã às] LT',
+            nextWeek: 'dddd [às] LT',
+            lastDay: '[Ontem às] LT',
+            lastWeek: function () {
+                return (this.day() === 0 || this.day() === 6) ?
+                    '[Último] dddd [às] LT' : // Saturday + Sunday
+                    '[Última] dddd [às] LT'; // Monday - Friday
+            },
+            sameElse: 'L'
+        },
+        relativeTime : {
+            future : 'em %s',
+            past : '%s atrás',
+            s : 'segundos',
+            m : 'um minuto',
+            mm : '%d minutos',
+            h : 'uma hora',
+            hh : '%d horas',
+            d : 'um dia',
+            dd : '%d dias',
+            M : 'um mês',
+            MM : '%d meses',
+            y : 'um ano',
+            yy : '%d anos'
+        },
+        ordinal : '%dº'
+    });
+moment.locale('pt-br')
 BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
-const myEventsList = [];
-const MyCalendar = props => (
-  <div>
-    <BigCalendar
-      events={myEventsList}
-      startAccessor={new Date(2014, 0, 1)}
-      endAccessor={new Date(2020, 11, 1)}
-    />
-  </div>
-);
+
+
 class Calendar extends Component {
+    onSubmit(values) {
+        const newEvent = {
+            title: values.service,
+            start: values.date.toDate(),
+            end: values.date.add(1, 'hour'),
+            desc: `Agendado para ${'fulano'}`
+        }
+        this.props.addEvent(newEvent);
+    }
+
     render() {
+        const { handleSubmit, eventsList } = this.props;
+        console.log(this.props);
         return (
             <div className={"rbc-calendar container-fluid"}>
-               <MyCalendar/>
+                <div className={'loginForm'}>
+                    <h3>Agende seu serviço</h3>
+                    <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className={'form-inline'}>
+                        <Field
+                            name="service"
+                            label="Serviço"
+                            placeholder="Serviço"
+                            type="text"
+                            component={({input}) => (
+                                <select {...input}>
+                                <option value="consulta">Consulta</option>
+                                <option value="vacina">Vacina</option>
+                                <option value="banhoTosa">Banho e tosa</option>
+                                </select>
+                            )}
+                        />
+                        <Field 
+                            name="date"
+                            label="Data"
+                            type="text"
+                            component={
+                                ({ input }) => (
+                                    <DateTime {...input} locale="pt-br" placeholder="Dia e hora" />)}
+                        />
+                        <button type="submit" className="btn btn-primary">Entrar</button>
+                        <Link to="/" className="btn btn-danger">Cancelar</Link>
+                    </form>
+                </div>
+                <BigCalendar
+                    events={eventsList.events}
+                    scrollToTime={new Date()}
+                />
             </div>
         );
     }
 }
 
-export default Calendar;
+const mapStateToProps = (state) => {
+    return {
+        eventsList: getAllEvents(state)
+    }
+}
+
+export default reduxForm({
+    form: 'Calendar'
+})(
+    connect(mapStateToProps, {addEvent})(Calendar)
+);

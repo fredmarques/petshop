@@ -41,7 +41,7 @@ export default class TitleBar extends Component {
         </LinkContainer>
 
         <LinkContainer to="/cart">
-          <NavItem >Cart</NavItem>
+          <NavItem >Carrinho</NavItem>
         </LinkContainer>
       </Nav>
     );

@@ -6,7 +6,7 @@ import './Login.css';
 
 class Login extends Component {
     renderField(field) {
-        const { meta: { touched, error } } = field
+        const { meta: { touched, error } } = field;
         const className = '';
         console.log('className ', className);
         return (

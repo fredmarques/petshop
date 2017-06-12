@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './Contact.css';
 
@@ -35,7 +34,7 @@ class Contact extends Component {
           <h3>Entre em contato conosco</h3>
           <form className="form-group" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
             <Field
-              name="nome"
+              name=""
               placeholder="Nome"
               type="text"
               component={this.renderField}

@@ -41,8 +41,14 @@ export const checkout = products => (dispatch, getState) => {
 }
 
 export const clearCart = () => (dispatch, getState) => {
-  console.log('fui chamado!');
   dispatch({
     type: types.CLEAR_CART_REQUEST,
   })
+}
+
+export const addEvent = (newEvent) => (dispatch, getState) => {
+    dispatch({
+        type: types.ADD_EVENT,
+        event: newEvent 
+    })
 }
