@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Image, Button, FormGroup, Form, FormControl, Glyphicon } from 'react-bootstrap';
-import { Row, Col } from 'react-flexbox-grid';
+import { Row } from 'react-flexbox-grid';
 
 // <Col xs={6} md={4} lg={4}>
 //     <ProductItem name="dog1" width={256} height={256} image={dog} alt={'dog'} heading={heading} body={body}/>

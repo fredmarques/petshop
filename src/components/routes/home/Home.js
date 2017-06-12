@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import { Image, Media } from 'react-bootstrap';
+import { Image } from 'react-bootstrap';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import dog from '../../../assets/dog.jpg';
 import cat from '../../../assets/cat.jpeg';
 import tiger from '../../../assets/tiger.jpeg';
-import Card from '../../shell/items/card';
 import './Home.css';
-
-const body = 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.';
-const heading = 'Dog fofo';
 
 class Home extends Component {
     render() {

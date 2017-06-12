@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './Contact.css';
 
@@ -23,8 +22,8 @@ class Contact extends Component {
   }
 
   onSubmit(values) {
-    alert('Hello Wolrd')
-    // this.props.history.push('/'); // -> uncomment this line to reditect user to "/"(home)
+    alert('Sua mensagem foi enviada!')
+    // this.props.history.push('/'); // -> uncomment this line to redirect user to "/"(home)
   }
 
   render() {
