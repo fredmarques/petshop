@@ -120,6 +120,7 @@ class Calendar extends Component {
                     </form>
                 </div>
                 <BigCalendar
+                    views={['month', 'week', 'day', 'agenda']}
                     events={eventsList.events}
                     scrollToTime={new Date()}
                 />
