@@ -6,6 +6,23 @@ import './Contact.css';
 
 class Contact extends Component {
 
+  renderField(field) {
+    const { meta: { touched, error } } = field
+    const className = '';
+    // console.log('className ', className);
+    return (
+      <div className={className}>
+        <input className="form-control"
+          type={field.type}
+          placeholder={field.placeholder}
+          {...field.input} />
+        <div className="text-help">
+          {touched ? error : ''}
+        </div>
+      </div>
+    );
+  }
+
   onSubmit(values) {
     alert('Sua mensagem foi enviada!')
     // this.props.history.push('/'); // -> uncomment this line to redirect user to "/"(home)
