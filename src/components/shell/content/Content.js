@@ -6,7 +6,7 @@ import Products from '../../routes/products/ProductsContainer';
 import Cart from '../../routes/cart/CartContainer';
 import Contact from '../../routes/contact/Contact';
 import Calendar from '../../routes/calendar/Calendar';
-import Login from '../../routes/login/Login';
+import User from '../../routes/user/User';
 
 class Content extends Component {
     render() {
@@ -18,7 +18,7 @@ class Content extends Component {
                 <Route path="/contact" component={Contact} />
                 <Route path="/calendar" component={Calendar} />
                 <Route path="/services" component={Services} />
-                <Route path="/login" component={Login} />
+                <Route path="/user" component={User} />
                 <Route path="/cart" component={Cart} />
                 <Route path="/" component={Home} />
             </Switch>

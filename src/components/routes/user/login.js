@@ -1,20 +1,21 @@
+import './User.css';
 import React, { Component } from 'react';
-import { Field, reduxForm} from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
-import  { connect } from 'react-redux';
-import './Login.css';
+import { connect } from 'react-redux';
+import { loginAdmin, loginUser } from '../../../actions';
+import { loginStatus, loginMode } from '../../../reducers/login';
 
 class Login extends Component {
     renderField(field) {
         const { meta: { touched, error } } = field;
         const className = '';
-        console.log('className ', className);
         return (
             <div className={className}>
                 <input className="form-control"
-                type={field.type}
-                placeholder={field.placeholder}
-                {...field.input}/>
+                    type={field.type}
+                    placeholder={field.placeholder}
+                    {...field.input} />
                 <div className="text-help">
                     {touched ? error : ''}
                 </div>
@@ -22,10 +23,14 @@ class Login extends Component {
         );
     }
 
-    onSubmit(values){
-        this.props.createPost(values, () => {
-            this.props.history.push('/');
-        })
+    onSubmit(values) {
+        if (values.email === 'foo@admin.com') {
+            this.props.loginAdmin();
+        } else {
+            this.props.loginUser();
+        }
+        values.email = '';
+        values.password = '';
     }
     render() {
         const { handleSubmit } = this.props;
@@ -56,30 +61,15 @@ class Login extends Component {
 
 }
 
-function validate(values){
-    const errors = {};
-    if(!values.email || values.email.indexOf('@') === -1) {
-        errors.email = 'Por favor, digite um e-mail válido';
+const mapStateToProps = (state) => {
+    return {
+        status: loginStatus(state),
+        mode: loginMode(state)
     }
-    if(!values.password) {
-        errors.password = 'Por favor, digite sua senha!';
-    }
-    return errors;
-}
-
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
-const asyncValidate = (values/*, dispatch */) => {
-  return sleep(1000) // simulate server latency
-    .then(() => {
-      if (['foo@' ].includes(values.email)) {
-      }
-    })
-}
+};
 
 export default reduxForm({
-    validate,
-    asyncValidate,
     form: 'Login'
 })(
-    connect(null, {})(Login)
+    connect(mapStateToProps, { loginAdmin, loginUser })(Login)
 );

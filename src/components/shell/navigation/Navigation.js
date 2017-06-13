@@ -3,15 +3,15 @@ import { Nav, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 export default class TitleBar extends Component {
-  constructor(props) {
-    super(props);
-    // this.state = { selectedKey: 1 };
-    this.handleSelect = this.handleSelect.bind(this);
-  }
+    constructor(props) {
+        super(props);
+        // this.state = { selectedKey: 1 };
+        this.handleSelect = this.handleSelect.bind(this);
+    }
 
-  handleSelect(eventKey) {
-    this.setState({ selectedKey: eventKey });
-  }
+    handleSelect(eventKey) {
+        this.setState({ selectedKey: eventKey });
+    }
 
   render() {
     return (
@@ -36,8 +36,8 @@ export default class TitleBar extends Component {
           <NavItem >Calendário</NavItem>
         </LinkContainer>
 
-        <LinkContainer to="/login">
-          <NavItem >Login</NavItem>
+        <LinkContainer to="/user">
+          <NavItem >Usuário</NavItem>
         </LinkContainer>
 
         <LinkContainer to="/cart">

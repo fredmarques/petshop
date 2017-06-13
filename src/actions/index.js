@@ -52,3 +52,17 @@ export const addEvent = (newEvent) => (dispatch, getState) => {
         event: newEvent 
     })
 }
+
+export const loginAdmin = () => (dispatch, getState) => {
+    console.log('debug: loginAdmin')
+    dispatch({
+        type: types.LOGIN_AS_ADMIN
+    })
+}
+
+export const loginUser = () => (dispatch, getState) => {
+    console.log('debug: loginUser')
+    dispatch({
+        type: types.LOGIN_AS_USER
+    })
+}
