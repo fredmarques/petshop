@@ -21,7 +21,7 @@ Comentários:
 Para essa versão do sistema algumas formularios de CRUD ficaram faltando. O grupo começou a implementar tudo usando Vuejs, depois
 tentamos modificar para React e nos faltou tempo para terminar tudo, tendo em vista que o grupo é de apenas 2 alunos.
 De qualquer forma, a estrutura geral de um SPA esta montada: Casca do sistema, Rotas, Estado da Aplicação, manipuladores de estado,
-Ações/Eventos que manipulam a aplicação. Falou mesmo terminar as funcionalidades dentro de cada conceito desses.
+Ações/Eventos que manipulam a aplicação. Faltou mesmo terminar as funcionalidades dentro de cada conceito desses.
 
 Usuáios do sistema:
 O sistema conta com uma conta admin/admin que habilita as telas de administrador.
