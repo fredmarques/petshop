@@ -7,6 +7,7 @@ import Cart from '../../routes/cart/CartContainer';
 import Contact from '../../routes/contact/Contact';
 import Calendar from '../../routes/calendar/Calendar';
 import User from '../../routes/user/User';
+import AnimalContainer from '../../routes/animal/AnimalContainer';
 
 class Content extends Component {
     render() {
@@ -20,6 +21,7 @@ class Content extends Component {
                 <Route path="/services" component={Services} />
                 <Route path="/user" component={User} />
                 <Route path="/cart" component={Cart} />
+                <Route path="/pet" component={AnimalContainer} />
                 <Route path="/" component={Home} />
             </Switch>
         );
