@@ -23,13 +23,32 @@ class Contact extends Component {
     );
   }
 
+  verifyFields(values){
+    if(values.nome === undefined){
+      alert('Por favor, insira um nome')
+    } else if(values.email === undefined){
+      alert('Por favor, insira um e-mail')
+    } else if(values.email.indexOf('@') === -1){
+      alert('Por favor, insira um e-mail válido')
+    } else if(values.telefone === undefined){
+      alert('Por favor, insira um telefone')
+    } else if(values.message === undefined){
+      alert('Por favor, insira uma mensagem')
+    } else {
+      return true;
+    }
+    return false;
+  }
+
   onSubmit(values) {
-    alert('Sua mensagem foi enviada!')
-    // this.props.history.push('/'); // -> uncomment this line to redirect user to "/"(home)
-    values.nome = '';
-    values.email='';
-    values.telefone = '';
-    values.message = '';
+    if(this.verifyFields(values)){
+      alert('Sua mensagem foi enviada!')
+      // this.props.history.push('/'); // -> uncomment this line to redirect user to "/"(home)
+      values.nome = '';
+      values.email='';
+      values.telefone = '';
+      values.message = '';
+    }
   }
 
   render() {
