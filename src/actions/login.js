@@ -14,6 +14,12 @@ export const loginUser = () => (dispatch, getState) => {
     })
 }
 
+export const logout = () => (dispatch, getState) => {
+    dispatch({
+        type: types.LOGOUT
+    })
+}
+
 export const logonUser = (user, mode) => (dispatch, getState) => {
     return registerUser(user, mode).then(({data}) => {
         localStorage.setItem('jwt', data.token)
