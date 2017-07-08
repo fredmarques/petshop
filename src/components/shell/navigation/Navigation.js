@@ -14,7 +14,7 @@ const initalList = [
           },
           {
             path: '/products',
-            label: 'Productos'
+            label: 'Produtos'
           },
           {
             path: '/contact',
@@ -37,6 +37,7 @@ const initalList = [
             label: 'Meus pets'
           }
         ];
+
 class TitleBar extends Component {
     constructor(props) {
         super(props);
