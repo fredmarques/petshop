@@ -7,7 +7,7 @@ import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import DateTime from 'react-datetime';
-import { addEvent } from '../../../actions';
+import { addEvent } from '../../../actions/events';
 import { getAllEvents } from '../../../reducers/events';
 
 
