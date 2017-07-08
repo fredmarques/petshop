@@ -3,42 +3,8 @@ import { Nav } from 'react-bootstrap';
 import NavegationItem from './NavegationItem';
 import { connect } from 'react-redux';
 
-const initalList = [
-          {
-            path: '/home',
-            label: 'Home'
-          },
-          {
-            path: '/services',
-            label: 'Serviços'
-          },
-          {
-            path: '/products',
-            label: 'Produtos'
-          },
-          {
-            path: '/contact',
-            label: 'Contato'
-          },
-          {
-            path: '/calendar',
-            label: 'Calendário'
-          },
-          {
-            path: '/user',
-            label: 'Usuario'
-          },
-          {
-            path: '/cart',
-            label: 'Carrinho'
-          },
-          {
-            path: '/pet',
-            label: 'Meus pets'
-          }
-        ];
 
-class TitleBar extends Component {
+class Navegation extends Component {
     constructor(props) {
         super(props);
         // this.state = { selectedKey: 1 };
@@ -67,8 +33,9 @@ class TitleBar extends Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-      menuList: state.menuList || initalList 
+      menuList: state.navegation
     }
 };
 
-export default connect(mapStateToProps)(TitleBar);
+export default connect(mapStateToProps, null, null,{pure: false})(Navegation);
+
