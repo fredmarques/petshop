@@ -10,11 +10,11 @@ import reducer from './reducers';
 // import promise from 'redux-promise';
 import thunk from 'redux-thunk'
 import { createLogger } from 'redux-logger'
-import { getAllProducts } from './actions';
+import { getAllProducts } from './actions/products';
 // const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 // import registerServiceWorker from './registerServiceWorker';
 
-const middleware = [ thunk];
+const middleware = [ thunk ];
 if (process.env.NODE_ENV !== 'production') {
   middleware.push(createLogger());
 }
