@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Cart from './Cart';
-import { checkout, clearCart } from '../../../actions'
+import { checkout, clearCart } from '../../../actions/products'
 import { connect } from 'react-redux';
 import { getTotal, getCartProducts } from '../../../reducers';
 
