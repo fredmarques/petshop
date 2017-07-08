@@ -1,11 +1,11 @@
-.productForm {
+.adminForm {
 	margin-top: 5%;
 }
 
-.productForm input {
+.adminForm input {
 	margin-bottom: 15px;
 }
 
-.productForm button {
+.adminForm button {
 	margin-right: 15px;
 }
