@@ -11,13 +11,15 @@ const login = (state = initialState,  action) => {
             return {
                 ...state,
                 loginStatus: true,
-                loginMode: 'admin'
+                loginMode: 'admin',
+                session: action.user
             }
         case LOGIN_AS_USER:
             return {
                 ...state,
                 loginStatus: true,
-                loginMode: 'user'
+                loginMode: 'user',
+                session: action.user
             }
         default:
             return state;

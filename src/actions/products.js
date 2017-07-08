@@ -45,24 +45,3 @@ export const clearCart = () => (dispatch, getState) => {
     type: types.CLEAR_CART_REQUEST,
   })
 }
-
-export const addEvent = (newEvent) => (dispatch, getState) => {
-    dispatch({
-        type: types.ADD_EVENT,
-        event: newEvent 
-    })
-}
-
-export const loginAdmin = () => (dispatch, getState) => {
-    console.log('debug: loginAdmin')
-    dispatch({
-        type: types.LOGIN_AS_ADMIN
-    })
-}
-
-export const loginUser = () => (dispatch, getState) => {
-    console.log('debug: loginUser')
-    dispatch({
-        type: types.LOGIN_AS_USER
-    })
-}

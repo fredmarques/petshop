@@ -1,8 +1,44 @@
 import React, { Component } from 'react';
-import { Nav, NavItem } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+import { Nav } from 'react-bootstrap';
+import NavegationItem from './NavegationItem';
+import { connect } from 'react-redux';
 
-export default class TitleBar extends Component {
+const initalList = [
+          {
+            path: '/home',
+            label: 'Home'
+          },
+          {
+            path: '/services',
+            label: 'Serviços'
+          },
+          {
+            path: '/products',
+            label: 'Produtos'
+          },
+          {
+            path: '/contact',
+            label: 'Contato'
+          },
+          {
+            path: '/calendar',
+            label: 'Calendário'
+          },
+          {
+            path: '/user',
+            label: 'Usuario'
+          },
+          {
+            path: '/cart',
+            label: 'Carrinho'
+          },
+          {
+            path: '/pet',
+            label: 'Meus pets'
+          }
+        ];
+
+class TitleBar extends Component {
     constructor(props) {
         super(props);
         // this.state = { selectedKey: 1 };
@@ -13,37 +49,26 @@ export default class TitleBar extends Component {
         this.setState({ selectedKey: eventKey });
     }
 
-  render() {
-    return (
-      <Nav bsStyle="tabs">
-        <LinkContainer to="/home">
-          <NavItem> Home </NavItem>
-        </LinkContainer>
+    renderItems(itemList) {
+      return itemList.map(item => <NavegationItem 
+                  key={item.label} 
+                  path={item.path}
+                  label={item.label} />)
+    }
 
-        <LinkContainer to="/services" >
-          <NavItem >Serviços</NavItem>
-        </LinkContainer>
-
-        <LinkContainer to="/products">
-          <NavItem >Produtos</NavItem>
-        </LinkContainer>
-
-        <LinkContainer to="/contact">
-          <NavItem >Contato</NavItem>
-        </LinkContainer>
-
-        <LinkContainer to="/calendar">
-          <NavItem >Calendário</NavItem>
-        </LinkContainer>
-
-        <LinkContainer to="/user">
-          <NavItem >Usuário</NavItem>
-        </LinkContainer>
-
-        <LinkContainer to="/cart">
-          <NavItem >Carrinho</NavItem>
-        </LinkContainer>
-      </Nav>
-    );
-  }
+    render() {
+      return (
+        <Nav bsStyle="tabs">
+          {this.renderItems(this.props.menuList)}
+        </Nav>
+      );
+    }
 }
+
+const mapStateToProps = (state, ownProps) => {
+    return {
+      menuList: state.menuList || initalList 
+    }
+};
+
+export default connect(mapStateToProps)(TitleBar);
