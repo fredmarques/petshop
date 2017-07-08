@@ -38,7 +38,28 @@ class AnimalForm extends Component {
             component={this.renderField}
           />
           <Field
-            name="raca"
+            name="id"
+            label="ID"
+            placeholder="ID"
+            type="text"
+            component={this.renderField}
+          />
+          <Field
+            name="photo"
+            label="Nome"
+            placeholder="Nome"
+            type="text"
+            component={this.renderField}
+          />
+          <Field
+            name="age"
+            label="Idade"
+            placeholder="Idade"
+            type="text"
+            component={this.renderField}
+          />
+          <Field
+            name="breed"
             label="Raça"
             placeholder="Raça"
             component={this.renderField}
