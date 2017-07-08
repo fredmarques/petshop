@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { loginAdmin, loginUser } from '../../../actions';
+import { loginAdmin, loginUser } from '../../../actions/login';
 import { loginStatus, loginMode } from '../../../reducers/login';
 
 class Login extends Component {
@@ -32,6 +32,7 @@ class Login extends Component {
         values.email = '';
         values.password = '';
     }
+
     render() {
         const { handleSubmit } = this.props;
         return (
@@ -54,6 +55,9 @@ class Login extends Component {
                     />
                     <button type="submit" className="btn btn-primary">Entrar</button>
                     <Link to="/" className="btn btn-danger">Cancelar</Link>
+                    <br/>
+                    <p> Não possui cadastro ainda? </p>
+                    <Link to="/logon" className="btn btn-primary">Cadastrar</Link>
                 </form>
             </div>
         );

@@ -8,7 +8,9 @@ class Customer extends Component {
 
     render() {
         return (
-            <div> area do cliente </div>
+            <div>
+              <h3>Area do cliente</h3> 
+            </div>
         );
     }
 }
