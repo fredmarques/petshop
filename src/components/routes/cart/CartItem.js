@@ -35,7 +35,7 @@ class CartItem extends Component {
     }
     render() {
         return (
-            <div style={{marginTop: 20}} >
+            <Col xs={12} style={{marginTop: 20}} >
               <Col xs={12} sm={4} style={{textAlign: "center"}}>
                 <Image width={this.width} height={this.height} src={this.image} alt={this.alt} rounded />
               </Col>
@@ -43,9 +43,9 @@ class CartItem extends Component {
                 <h4>{`${this.heading} (${this.quantity}un)`}</h4>
                 <p>{this.body}</p>
               </Col>
-              <Col sm={2}>
+                <Col sm={2}>
               </Col>
-            </div>
+            </Col>
         );
     }
 }
