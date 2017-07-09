@@ -9,3 +9,7 @@
 .loginForm button {
 	margin-right: 15px;
 }
+
+#logoutButton {
+  float: right;
+}

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Nav } from 'react-bootstrap';
 import NavegationItem from './NavegationItem';
 import { connect } from 'react-redux';
+import { loginStatus, loginMode } from '../../../reducers/login';
+import Logout from '../../routes/user/logout';
 
 
 class Navegation extends Component {
@@ -22,10 +24,17 @@ class Navegation extends Component {
                   label={item.label} />)
     }
 
+    addLogOutLink() {
+      const { status } = this.props;
+      if(status)
+        return <Logout/>
+    }
+
     render() {
       return (
         <Nav bsStyle="tabs">
           {this.renderItems(this.props.menuList)}
+          {this.addLogOutLink()}
         </Nav>
       );
     }
@@ -33,7 +42,8 @@ class Navegation extends Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-      menuList: state.navegation
+      menuList: state.navegation,
+      status: loginStatus(state),
     }
 };
 

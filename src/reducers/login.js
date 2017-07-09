@@ -1,4 +1,4 @@
-import { LOGIN_AS_ADMIN, LOGIN_AS_USER } from '../constants/ActionTypes';
+import { LOGIN_AS_ADMIN, LOGIN_AS_USER, LOGOUT } from '../constants/ActionTypes';
 
 const initialState = {
     loginStatus: false,
@@ -18,6 +18,12 @@ const login = (state = initialState,  action) => {
                 ...state,
                 loginStatus: true,
                 loginMode: 'user',
+            }
+        case LOGOUT:
+            return {
+                ...state,
+                loginStatus: false,
+                loginMode: 'user'
             }
         default:
             return state;
