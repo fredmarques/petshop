@@ -1,4 +1,4 @@
-import { LOGIN_AS_ADMIN, LOGIN_AS_USER, REGISTER_ANIMAL, USER_INFO } from '../constants/ActionTypes';
+import { LOGIN_AS_ADMIN, LOGIN_AS_USER, REGISTER_ANIMAL, USER_INFO, LOGOUT } from '../constants/ActionTypes';
 
 const initialState = {
   animalList: []
@@ -27,6 +27,10 @@ const session = (state = initialState, action) => {
       return {
         ...state,
         ...action.user
+      }
+    case LOGOUT:
+      return {
+        ...initialState
       }
     default:
       return state;
