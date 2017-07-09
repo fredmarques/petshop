@@ -2,8 +2,8 @@ import { REGISTER_ANIMAL } from '../constants/ActionTypes';
 import { registerAnimal as ra} from '../api/user';
 
 export const registerAnimal = (user, animal) => (dispatch, ownProps) => {
-  return ra(user, animal).then((data) => {
-    localStorage.setItem('jwt', data.token)
+  return ra(user, animal).then(resp => {
+    localStorage.setItem('jwt', resp.data.token)
     return dispatch({
       type: REGISTER_ANIMAL,
       data: {animal, user}
