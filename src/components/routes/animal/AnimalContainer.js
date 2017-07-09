@@ -37,7 +37,7 @@ const mapStateToProps = (state) => {
   return {
     loginStatus: state.login.loginStatus,
     loginMode: state.login.loginMode,
-    session: state.login.session
+    session: state.session
   }
 };
 

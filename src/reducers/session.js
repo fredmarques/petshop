@@ -37,3 +37,5 @@ const session = (state = initialState, action) => {
   }
 }
 export default session;
+
+export const getAllAnimals = (state) => (state.session.animallist || []);
