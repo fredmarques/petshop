@@ -9,3 +9,11 @@ export function registerUser(user, mode){
 export function registerAnimal(animal) {
   return axios.post(`${api}/animal`, animal)
 }
+
+export function getInfo(){
+  return axios.get(api)
+}
+
+export function login(email, password) {
+  return axios.get(`${api}/${email}/${password}`)
+}

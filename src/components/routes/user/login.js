@@ -25,9 +25,9 @@ class Login extends Component {
 
     onSubmit(values) {
         if (values.email === 'admin' && values.password === 'admin') {
-            this.props.loginAdmin();
+            this.props.loginAdmin(values.email, values.password);
         } else {
-            this.props.loginUser();
+            this.props.loginUser(values.email, values.password);
         }
         values.email = '';
         values.password = '';
