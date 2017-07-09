@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
+import { registerPorduct } from '../../../actions/products'
 
 class ProductForm extends Component {
   renderField(field) {
@@ -22,6 +23,9 @@ class ProductForm extends Component {
   }
 
   onSubmit(values) {
+    console.log('values: ', values)
+    this.props.registerPorduct({...values})
+      
   }
 
   render() {
@@ -32,7 +36,7 @@ class ProductForm extends Component {
           <h3>Cadastre um Novo Produto</h3>
           <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className={'form-inline'}>
             <Field
-              name="name"
+              name="heading"
               label="Nome"
               placeholder="Nome"
               type="text"
@@ -46,7 +50,7 @@ class ProductForm extends Component {
               component={this.renderField}
             />
             <Field
-              name="foto"
+              name="image"
               label="Foto"
               placeholder="Link para foto"
               type="text"
@@ -60,7 +64,7 @@ class ProductForm extends Component {
               component={this.renderField}
             />
             <Field
-              name="stock"
+              name="inventory"
               label="Qtd em estoque"
               placeholder="Qtd em estoque"
               type="text"
@@ -74,7 +78,7 @@ class ProductForm extends Component {
               component={this.renderField}
             />
             <Field
-              name="desc"
+              name="body"
               label="Descrição"
               type="input"
               component={
@@ -92,13 +96,8 @@ class ProductForm extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-  }
-};
-
 export default reduxForm({
   form: 'Product'
 })(
-  connect(mapStateToProps, {})(ProductForm)
+  connect(null, {registerPorduct})(ProductForm)
 );

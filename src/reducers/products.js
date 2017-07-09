@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { RECEIVE_PRODUCTS, ADD_TO_CART } from '../constants/ActionTypes'
+import { RECEIVE_PRODUCTS, ADD_TO_CART, ADD_PRODUCT } from '../constants/ActionTypes'
 
 const products = (state, action) => {
   switch (action.type) {
@@ -44,9 +44,22 @@ const visibleIds = (state = [], action) => {
   }
 }
 
+
+const productList = (state = [], action) => {
+  switch (action.type) {
+    case RECEIVE_PRODUCTS:
+      return [...action.products]
+    case ADD_PRODUCT:
+      return [...state, action.product]
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   byId,
-  visibleIds
+  visibleIds,
+  productList
 })
 
 export const getProduct = (state, id) =>

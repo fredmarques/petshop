@@ -14,8 +14,8 @@ class ProductItem extends Component {
     this.image = this.props.product.image;
     this.inventory = this.props.product.inventory;
     this.alt = this.props.product.alt;
-    this.width = this.props.product.width;
-    this.height = this.props.product.height;
+    this.width = this.props.product.width || 256;
+    this.height = this.props.product.height ||  256;
     this.heading = this.props.product.heading;
     this.body = this.props.product.body;
     this.onAddToCartClick = this.props.onAddToCartClick;

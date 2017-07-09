@@ -1,4 +1,16 @@
 import dog from '../assets/dog.jpg';
+import axios from 'axios';
+
+const apiBaseUrl = 'http://localhost:9090/api'
+const api = `${apiBaseUrl}/products`;
+
+export function insertProduct(product) {
+  return axios.post(api, product)
+}
+
+export function getAll() {
+  return axios.get(`${api}/all`)
+}
 
 export default [
 {

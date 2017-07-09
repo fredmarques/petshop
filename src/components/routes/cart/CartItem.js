@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image  } from 'react-bootstrap';
+import { Image } from 'react-bootstrap';
 import { Col } from 'react-flexbox-grid';
 
 // <Col xs={6} md={4} lg={4}>
@@ -12,10 +12,10 @@ class CartItem extends Component {
         // props
         this.id = this.props.product.id;
         this.image = this.props.product.image
-        this.alt = this.props.product.alt;
-        this.width = this.props.product.width;
+        this.alt = this.props.product.alt || 'img';
+        this.width = this.props.product.width || 256;
         this.quantity = this.props.product.quantity;
-        this.height = this.props.product.height;
+        this.height = this.props.product.height || 256;
         this.heading = this.props.product.heading;
         this.body = this.props.product.body;
         // component state

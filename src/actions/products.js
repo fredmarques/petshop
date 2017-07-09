@@ -1,14 +1,39 @@
 import shop from '../api/shop'
 import * as types from '../constants/ActionTypes'
+import { getAll, insertProduct } from '../api/products'
 
-const receiveProducts = products => ({
-  type: types.RECEIVE_PRODUCTS,
-  products: products
-})
+// const receiveProducts = products => ({
+//   type: types.RECEIVE_PRODUCTS,
+//   products: products
+// })
+
+export const registerPorduct = (product) => dispatch => {
+  console.log('registrando... ', product)
+  return insertProduct(product)
+  .then(resp => {
+    dispatch({
+      type: types.ADD_PRODUCT,
+      product
+    })
+    console.log('Tudo certo', resp)
+  })
+  .catch(err => console.log(err))
+}
 
 export const getAllProducts = () => dispatch => {
-  shop.getProducts(products => {
-    dispatch(receiveProducts(products))
+  // shop.getProducts(products => {
+  //   dispatch(receiveProducts(products))
+  // })
+  console.log('iniciando listagem de produtos')
+  getAll().then(({data}) => {
+    console.log('Listando os produtos: ', data)
+    return dispatch({
+      type: types.RECEIVE_PRODUCTS,
+      products: data.products
+    })
+  }).catch(err => {
+    console.log(err)
+    alert('Erro ao listar os produtos')
   })
 }
 
