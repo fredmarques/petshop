@@ -9,3 +9,7 @@
 .animalForm button {
 	margin-right: 15px;
 }
+
+th {
+  text-align: center;
+}

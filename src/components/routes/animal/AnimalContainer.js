@@ -10,7 +10,10 @@ class AnimalContainer extends Component {
     if (loginStatus && loginMode === 'user') {
       if (this.props.session && this.props.session.animalList) {
         return (
-          <AnimalList animals={this.props.session.animalList }/>
+          <div>
+            <AnimalList animals={this.props.session.animalList }/>
+            <AnimalForm />
+          </div>
         )
       } else {
         return (
@@ -37,7 +40,7 @@ const mapStateToProps = (state) => {
   return {
     loginStatus: state.login.loginStatus,
     loginMode: state.login.loginMode,
-    session: state.login.session
+    session: state.session
   }
 };
 

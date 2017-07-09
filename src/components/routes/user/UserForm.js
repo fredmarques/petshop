@@ -34,6 +34,19 @@ class UserForm extends Component {
         <h3>Informe os seus dados</h3>
         <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className={'form-inline'}>
           <Field
+            name="email"
+            label="Email"
+            placeholder="Email"
+            component={this.renderField}
+          />
+          <Field
+            name="password"
+            label="Senha"
+            placeholder="Senha"
+            type="text"
+            component={this.renderField}
+          />
+          <Field
             name="name"
             label="Nome"
             placeholder="Nome"
@@ -48,13 +61,6 @@ class UserForm extends Component {
             component={this.renderField}
           />
           <Field
-            name="password"
-            label="Senha"
-            placeholder="Senha"
-            type="text"
-            component={this.renderField}
-          />
-          <Field
             name="photo"
             label="Foto"
             placeholder="Link para foto"
@@ -65,12 +71,6 @@ class UserForm extends Component {
             name="phone"
             label="Telefone"
             placeholder="Telefone"
-            component={this.renderField}
-          />
-          <Field
-            name="email"
-            label="Email"
-            placeholder="Email"
             component={this.renderField}
           />
           <button type="submit" className="btn btn-primary">Entrar</button>
