@@ -1,4 +1,4 @@
-import { LOGIN_AS_ADMIN, LOGIN_AS_USER, REGISTER_ANIMAL } from '../constants/ActionTypes';
+import { LOGIN_AS_ADMIN, LOGIN_AS_USER, REGISTER_ANIMAL, USER_INFO } from '../constants/ActionTypes';
 
 const initialState = {
     animalList: []
@@ -19,11 +19,16 @@ const session = (state = initialState, action) => {
       }
       
     case REGISTER_ANIMAL:
-    console.info(state, action)
       return {
           ...state,
           ...action.user,
           animalList: [...state.animalList, action.data.animal]
+      }
+    case USER_INFO:
+    console.info('reducing with user_info:', state, action)
+      return {
+        ...state,
+        ...action.user
       }
     default:
       return state;
