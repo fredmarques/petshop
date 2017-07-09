@@ -54,11 +54,16 @@ export const logout = () => (dispatch, getState) => {
   })
 }
 
-export const logonUser = (mode) => (dispatch, getState) => {
-  return registerUser(mode).then(({ data }) => {
+export const logonUser = (user) => (dispatch, getState) => {
+  return registerUser(user).then(({ data }) => {
     localStorage.setItem('jwt', data.token)
     setAuthToken(data.token)
-    return dispatch({ type: types.LOGIN_AS_USER })
+    console.log('user: ', user)
+    if (user.id === 'admin') {
+      return dispatch({ type: types.LOGIN_AS_ADMIN, user })
+    } else {
+      return dispatch({ type: types.LOGIN_AS_USER, user })
+    }
   }).catch(err => console.log('erro em LogonUser: ', JSON.stringify(err)))
 }
 
