@@ -11,7 +11,7 @@ export function registerAnimal(animal) {
 }
 
 export function getInfo(){
-  return axios.get(api)
+  return axios.get(`${api}/userInfo`)
 }
 
 export function login(email, password) {

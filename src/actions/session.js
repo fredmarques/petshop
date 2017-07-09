@@ -3,7 +3,6 @@ import { getInfo } from '../api/user';
 
 export const getUserInfo = () => (dispatch, getState) => {
   return getInfo().then(currentUser => {
-    console.log('currentUSer: ', currentUser)
     return dispatch({
       type: USER_INFO,
       user: currentUser

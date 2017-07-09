@@ -1,6 +1,6 @@
 import jwtDecode from 'jwt-decode'
 import * as types from '../constants/ActionTypes'
-import { registerUser, login } from '../api/user'
+import { registerUser, login, getInfo } from '../api/user'
 import setAuthToken from '../utils/setAuthToken'
 
 export const loginAdmin = (email, password) => (dispatch, getState) => {
@@ -9,7 +9,7 @@ export const loginAdmin = (email, password) => (dispatch, getState) => {
     return dispatch({
       type: types.LOGIN_AS_ADMIN
     })
-  }).catch(err => {
+ }).catch(err => {
     console.log(err);
     alert('Oops, algo deu errado')
   })
@@ -48,11 +48,16 @@ export const localLogin = () => (dispatch, getState) => {
   const token = localStorage.getItem('jwt');
   if (token) {
     setAuthToken(token)
-    const user = jwtDecode(token)
-    if (user.type === 'admin') {
-      return dispatch({ type: types.LOGIN_AS_ADMIN })
-    } else {
-      return dispatch({ type: types.LOGIN_AS_USER })
-    }
+    return getInfo(token).then(({data}) => {
+      const { user } = data
+      if (user.type === 'admin' || user.id === 'admin') {
+        return dispatch({ type: types.LOGIN_AS_ADMIN })
+      } else {
+        return dispatch({ type: types.LOGIN_AS_USER })
+      }
+    }).catch(err =>{
+      console.log(err)
+      alert('deu ruim no login com token')
+    })
   }
 }
