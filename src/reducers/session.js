@@ -21,7 +21,7 @@ const session = (state = initialState, action) => {
       return {
         ...state,
         ...action.user,
-        animalList: [...state.animalList, action.data.animal]
+        animalList: [...state.animalList, action.animal]
       }
     case USER_INFO:
       return {

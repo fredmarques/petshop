@@ -8,7 +8,7 @@ class AnimalContainer extends Component {
   render() {
     const { loginStatus, loginMode } = this.props;
     if (loginStatus && loginMode === 'user') {
-      if (this.props.session && this.props.session.animalList) {
+      if (this.props.session && this.props.session.animalList && this.props.session.animalList.length > 0) {
         return (
           <div>
             <AnimalList animals={this.props.session.animalList }/>

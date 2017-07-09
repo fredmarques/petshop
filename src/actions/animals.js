@@ -6,7 +6,7 @@ export const registerAnimal = (animal) => (dispatch, ownProps) => {
     localStorage.setItem('jwt', resp.data.token)
     return dispatch({
       type: REGISTER_ANIMAL,
-      data: animal
+      animal
     })
-  }).catch(err => { console.info(err); alert('Ooops!, Algo deu errado')})
+  }).catch(err => { console.info(err); })
 }

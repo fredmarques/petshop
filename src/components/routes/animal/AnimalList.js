@@ -21,7 +21,7 @@ class AnimalList extends Component {
               </thead>
               <tbody>
                 {
-                  this.props.animals.map(animal => 
+                  this.props.animals.map(animal =>  
                     <tr>
                       <td>{animal.id}</td>
                       <td>{animal.name}</td>
@@ -29,7 +29,7 @@ class AnimalList extends Component {
                       <td>{animal.age}</td>
                       <td><Button bsStyle="info">Editar</Button></td>
                       <td><Button bsStyle="danger">Excluir</Button></td>
-                    </tr>)
+                    </tr> )
                 }
               </tbody>
             </Table>
