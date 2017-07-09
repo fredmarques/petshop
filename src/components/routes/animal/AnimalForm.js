@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
+import { registerAnimal } from '../../../actions/animals';
 
 class AnimalForm extends Component {
   renderField(field) {
@@ -22,6 +23,12 @@ class AnimalForm extends Component {
   }
 
   onSubmit(values) {
+    this.props.registerAnimal(this.props.session, values)
+    // values.name = '';
+    // values.id = '';
+    // values.age = '';
+    // values.breed = '';
+    // this.props.history.push('/user')
   }
 
   render() {
@@ -41,13 +48,6 @@ class AnimalForm extends Component {
             name="id"
             label="ID"
             placeholder="ID"
-            type="text"
-            component={this.renderField}
-          />
-          <Field
-            name="photo"
-            label="Nome"
-            placeholder="Nome"
             type="text"
             component={this.renderField}
           />
@@ -73,13 +73,14 @@ class AnimalForm extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-    return {
-    }
-};
+const mapStateToProps = (state, ownProps) => {
+  return {
+    session: state.session
+  }
+}
 
 export default reduxForm({
     form: 'Animal'
 })(
-    connect(mapStateToProps, {})(AnimalForm)
+    connect(mapStateToProps, {registerAnimal})(AnimalForm)
 );

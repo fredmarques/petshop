@@ -23,10 +23,8 @@ class UserForm extends Component {
   }
 
   onSubmit(values) {
-    console.log('values em UserForm: ', values)
     console.log(this.props)
     this.props.logonUser(values)
-    console.log('aqui')
   }
 
   render() {

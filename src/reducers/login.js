@@ -12,14 +12,12 @@ const login = (state = initialState,  action) => {
                 ...state,
                 loginStatus: true,
                 loginMode: 'admin',
-                session: action.user
             }
         case LOGIN_AS_USER:
             return {
                 ...state,
                 loginStatus: true,
                 loginMode: 'user',
-                session: action.user
             }
         default:
             return state;

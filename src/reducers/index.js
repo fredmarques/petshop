@@ -4,6 +4,7 @@ import products, * as fromProducts from './products'
 import events from './events';
 import login from './login';
 import navegation from './navegation';
+import session from './session';
 import { reducer as formReducer } from 'redux-form';
 
 export default combineReducers({
@@ -12,7 +13,8 @@ export default combineReducers({
     products,
     events,
     login,
-    navegation
+    navegation,
+    session
 })
 const getAddedIds = state => fromCart.getAddedIds(state.cart)
 const getQuantity = (state, id) => fromCart.getQuantity(state.cart, id)
