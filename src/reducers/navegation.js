@@ -1,5 +1,5 @@
-import {LOGIN_AS_ADMIN, LOGIN_AS_USER}  from '../constants/ActionTypes'
-const initalNavList = [
+import {LOGIN_AS_ADMIN, LOGIN_AS_USER, LOGOUT}  from '../constants/ActionTypes'
+const initialNavList = [
   {
     path: '/home',
     label: 'Home'
@@ -27,7 +27,7 @@ const initalNavList = [
 ]
 
 const userList = [
-  ...initalNavList,
+  ...initialNavList,
   {
     path: '/cart',
     label: 'Carrinho'
@@ -39,15 +39,17 @@ const userList = [
 ]
 
 const adminList = [
-  ...initalNavList,
+  ...initialNavList,
 ]
 
-export default function navegation(state = initalNavList, action) {
+export default function navegation(state = initialNavList, action) {
   switch (action.type) {
     case LOGIN_AS_USER:
       return userList
     case LOGIN_AS_ADMIN:
      return adminList 
+    case LOGOUT:
+     return initialNavList 
     default:
       return state;
   }
