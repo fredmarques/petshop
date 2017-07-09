@@ -1,4 +1,3 @@
-import jwtDecode from 'jwt-decode'
 import * as types from '../constants/ActionTypes'
 import { registerUser, login, getInfo } from '../api/user'
 import setAuthToken from '../utils/setAuthToken'
@@ -11,7 +10,7 @@ export const loginAdmin = (email, password) => (dispatch, getState) => {
     })
  }).catch(err => {
     console.log(err);
-    alert('Oops, algo deu errado')
+    alert('Usuário não encontrado')
   })
 }
 
@@ -24,7 +23,7 @@ export const loginUser = (email, password) => (dispatch, getState) => {
     })
   }).catch(err => {
     console.log(err);
-    alert('Oops, algo deu errado')
+    alert('usuario não encontrado')
   })
 }
 
@@ -51,9 +50,9 @@ export const localLogin = () => (dispatch, getState) => {
     return getInfo(token).then(({data}) => {
       const { user } = data
       if (user.type === 'admin' || user.id === 'admin') {
-        return dispatch({ type: types.LOGIN_AS_ADMIN })
+        return dispatch({ type: types.LOGIN_AS_ADMIN, user })
       } else {
-        return dispatch({ type: types.LOGIN_AS_USER })
+        return dispatch({ type: types.LOGIN_AS_USER, user })
       }
     }).catch(err =>{
       console.log(err)

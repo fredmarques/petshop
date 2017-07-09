@@ -10,7 +10,6 @@ import Admin from './admin';
 class User extends Component {
   componentDidMount(){
     this.props.localLogin();
-
   }
 
   render() {
