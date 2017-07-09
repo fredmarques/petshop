@@ -58,6 +58,23 @@ BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
 
 
 class Calendar extends Component {
+
+    renderField(field) {
+        const { meta: { touched, error } } = field;
+        const className = '';
+        return (
+          <div className={className}>
+            <input className="form-control"
+              type={field.type}
+              placeholder={field.placeholder}
+              {...field.input} />
+            <div className="text-help">
+              {touched ? error : ''}
+            </div>
+          </div>
+        );
+      }
+
     onSubmit(values) {
 
         // Check if service was selected
@@ -67,6 +84,10 @@ class Calendar extends Component {
         // Check if data was selected
         } else if(values.date === undefined){
             alert('Selecione uma data')
+
+        // Check if data was selected
+        } else if(values.creditcard === undefined){
+            alert('Insira o número do cartão para pagamento')
 
         } else {
             const newEvent = {
@@ -83,6 +104,7 @@ class Calendar extends Component {
                     newEvent.start.toString().substring(16,21) + ' horas');
             values.service = '';
             values.date = '';
+            values.creditcard = '';
         }
     }
 
@@ -101,10 +123,10 @@ class Calendar extends Component {
                             type="text"
                             component={({input}) => (
                                 <select {...input}>
-                                <option value="">Escolha um serviço</option>
-                                <option value="consulta">Consulta</option>
-                                <option value="vacina">Vacina</option>
-                                <option value="banhoTosa">Banho e tosa</option>
+                                    <option value="">Escolha um serviço</option>
+                                    <option value="consulta">Consulta</option>
+                                    <option value="vacina">Vacina</option>
+                                    <option value="banhoTosa">Banho e tosa</option>
                                 </select>
                             )}
                         />
@@ -115,6 +137,13 @@ class Calendar extends Component {
                             component={
                                 ({ input }) => (
                                     <DateTime {...input} locale="pt-br" placeholder="Dia e hora" />)}
+                        />
+                        <Field 
+                            name="creditcard"
+                            label="creditcard"
+                            placeholder="Número do cartão"
+                            type="text"
+                            component={this.renderField}
                         />
                         <button type="submit" className="btn btn-success">Agendar</button>
                     </form>
