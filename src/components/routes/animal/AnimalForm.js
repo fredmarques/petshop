@@ -23,7 +23,7 @@ class AnimalForm extends Component {
   }
 
   onSubmit(values) {
-    this.props.registerAnimal(this.props.session, values)
+    this.props.registerAnimal(values)
     // values.name = '';
     // values.id = '';
     // values.age = '';
@@ -73,14 +73,8 @@ class AnimalForm extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    session: state.session
-  }
-}
-
 export default reduxForm({
     form: 'Animal'
 })(
-    connect(mapStateToProps, {registerAnimal})(AnimalForm)
+    connect(null, {registerAnimal})(AnimalForm)
 );

@@ -1,42 +1,46 @@
 import jwtDecode from 'jwt-decode'
 import * as types from '../constants/ActionTypes'
 import { registerUser } from '../api/user'
+import setAuthToken from '../utils/setAuthToken'
 
 export const loginAdmin = () => (dispatch, getState) => {
-    dispatch({
-        type: types.LOGIN_AS_ADMIN
-    })
+  dispatch({
+    type: types.LOGIN_AS_ADMIN
+  })
 }
 
 export const loginUser = () => (dispatch, getState) => {
-    dispatch({
-        type: types.LOGIN_AS_USER
-    })
+  dispatch({
+    type: types.LOGIN_AS_USER
+  })
 }
 
 export const logout = () => (dispatch, getState) => {
-    dispatch({
-        type: types.LOGOUT
-    })
+  setAuthToken(false)
+  dispatch({
+    type: types.LOGOUT
+  })
 }
 
-export const logonUser = (user, mode) => (dispatch, getState) => {
-    return registerUser(user, mode).then(({data}) => {
-        localStorage.setItem('jwt', data.token)
-        return dispatch({ type: types.LOGIN_AS_USER })
-      }).catch(err => console.log('erro em LogonUser: ', JSON.stringify(err)))
+export const logonUser = (mode) => (dispatch, getState) => {
+  return registerUser(mode).then(({ data }) => {
+    localStorage.setItem('jwt', data.token)
+    setAuthToken(data.token)
+    return dispatch({ type: types.LOGIN_AS_USER })
+  }).catch(err => console.log('erro em LogonUser: ', JSON.stringify(err)))
 }
 
 export const localLogin = () => (dispatch, getState) => {
   const token = localStorage.getItem('jwt');
+  setAuthToken(token)
   console.info(token)
-  if(token) {
+  if (token) {
     const user = jwtDecode(token)
     console.info(user);
-    if(user.type === 'admin') {
-      return dispatch({type: types.LOGIN_AS_ADMIN, user})
+    if (user.type === 'admin') {
+      return dispatch({ type: types.LOGIN_AS_ADMIN })
     } else {
-      return dispatch({type: types.LOGIN_AS_USER, user})
-    } 
+      return dispatch({ type: types.LOGIN_AS_USER })
+    }
   }
 }

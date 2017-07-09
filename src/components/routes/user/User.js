@@ -8,8 +8,6 @@ import Customer from './customer';
 import Admin from './admin';
 
 class User extends Component {
-
-
   componentDidMount(){
     this.props.localLogin();
 

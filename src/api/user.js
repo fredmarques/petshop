@@ -6,6 +6,6 @@ export function registerUser(user, mode){
     return axios.post(api, {...user, mode})
 }
 
-export function registerAnimal(user, animal) {
-  return axios.post(`${api}/animal`, {user, animal})
+export function registerAnimal(animal) {
+  return axios.post(`${api}/animal`, animal)
 }

@@ -19,10 +19,11 @@ const session = (state = initialState, action) => {
       }
       
     case REGISTER_ANIMAL:
-    console.info(state)
+    console.info(state, action)
       return {
           ...state,
-            animalList: [...state.animalList, action.data.animal]
+          ...action.user,
+          animalList: [...state.animalList, action.data.animal]
       }
     default:
       return state;
