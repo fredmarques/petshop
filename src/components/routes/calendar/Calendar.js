@@ -73,7 +73,7 @@ class Calendar extends Component {
             </div>
           </div>
         );
-      }
+    }
 
     onSubmit(values) {
 

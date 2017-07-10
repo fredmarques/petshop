@@ -34,6 +34,9 @@ class Cart extends Component {
                 <h2>Seu carrinho de compras </h2>
               </Col>
               <Col xs={12}>
+                <br/>
+                <input name="creditcardcart" id="creditcardcart" type="text" placeholder="Cartão de crédito"/>
+                <br/><br/>
                 <Button bsStyle="success" onClick={this.checkout}>Finalizar compra</Button>
                 <Button bsStyle="danger" onClick={this.clear}>Limpar carrinho</Button>
               </Col>
