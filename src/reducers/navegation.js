@@ -31,10 +31,6 @@ const userList = [
   {
     path: '/cart',
     label: 'Carrinho'
-  },
-  {
-    path: '/pet',
-    label: 'Meus pets'
   }
 ]
 

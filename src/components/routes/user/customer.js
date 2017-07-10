@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import { loginAdmin, loginUser } from '../../../actions';
 import { loginStatus, loginMode } from '../../../reducers/login';
+import AnimalContainer from '../animal/AnimalContainer'
 
 class Customer extends Component {
 
@@ -10,6 +11,7 @@ class Customer extends Component {
         return (
             <div>
               <h3>Area do cliente</h3> 
+              <AnimalContainer />
             </div>
         );
     }
