@@ -150,7 +150,7 @@ class Calendar extends Component {
                 </div>
                 <BigCalendar
                     views={['month', 'week', 'day', 'agenda']}
-                    events={eventsList.events}
+                    events={eventsList}
                     scrollToTime={new Date()}
                 />
             </div>
@@ -160,7 +160,7 @@ class Calendar extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        eventsList: getAllEvents(state)
+        eventsList: state.events.events || []
     }
 }
 
