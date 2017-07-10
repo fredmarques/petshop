@@ -20,9 +20,13 @@ class Cart extends Component {
   }
 
   checkout(){
-    console.log(this.state.card)
-    this.onCheckoutClick()
-    this.setState({product: []})
+    if(this.state.card === ''){
+      alert('Insira o número do cartão de crédito')
+    } else {
+      alert('A compra foi concluida. Total: R$' + this.total + '. Cartão: ' + this.state.card)
+      this.onCheckoutClick()
+      this.setState({product: []})
+    }
   }
   clear(){
     this.onClearCartClick();
