@@ -10,7 +10,7 @@ class Customer extends Component {
     render() {
         return (
             <div>
-              <h3>Area do cliente</h3> 
+              <h3>Meus pets</h3> 
               <AnimalContainer />
             </div>
         );
