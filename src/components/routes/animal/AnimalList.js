@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import { Grid, Row, Col, Table, Button } from 'react-bootstrap';
 
 class AnimalList extends Component {
+  handleUpdate(e) {
+    this.props.update(e.target.id)
+  }
+
+  handleDelete(e) {
+    this.props.delete(e.target.id)
+  }
+
   render() {
     console.log(this.props.animals)
     return (
@@ -21,15 +29,14 @@ class AnimalList extends Component {
               </thead>
               <tbody>
                 {
-                  this.props.animals.map(animal =>  
+                  this.props.animals.map(animal =>
                     <tr>
                       <td>{animal.id}</td>
                       <td>{animal.name}</td>
                       <td>{animal.breed}</td>
                       <td>{animal.age}</td>
-                      <td><Button bsStyle="info">Editar</Button></td>
-                      <td><Button bsStyle="danger">Excluir</Button></td>
-                    </tr> )
+                      <td><Button id={animal.id} bsStyle="danger" onClick={(e) => this.handleDelete(e)}>Excluir</Button></td>
+                    </tr>)
                 }
               </tbody>
             </Table>

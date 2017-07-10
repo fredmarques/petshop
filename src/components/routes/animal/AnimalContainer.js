@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import AnimalForm from './AnimalForm'
 import AnimalList from './AnimalList';
+import { deleteAnimal, updateAnimal } from '../../../actions/animals'
 
 class AnimalContainer extends Component {
   render() {
@@ -11,7 +12,11 @@ class AnimalContainer extends Component {
       if (this.props.session && this.props.session.animalList && this.props.session.animalList.length > 0) {
         return (
           <div>
-            <AnimalList animals={this.props.session.animalList }/>
+            <AnimalList 
+              animals={this.props.session.animalList }
+              delete={this.props.deleteAnimal } 
+              update={this.props.updateAnimal }
+              />
             <AnimalForm />
           </div>
         )
@@ -44,4 +49,4 @@ const mapStateToProps = (state) => {
   }
 };
 
-export default connect(mapStateToProps, {})(AnimalContainer)
+export default connect(mapStateToProps, { deleteAnimal, updateAnimal })(AnimalContainer)

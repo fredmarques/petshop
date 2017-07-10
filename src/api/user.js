@@ -17,3 +17,11 @@ export function getInfo(){
 export function login(email, password) {
   return axios.get(`${api}/${email}/${password}`)
 }
+
+export function removeAnimal(animalId) {
+  return axios.delete(`${api}/animal/${animalId}`)
+}
+
+export function changeAnimal(animalId, animal) {
+  return axios.put(`${api}/animal/${animalId}`, animal)
+}

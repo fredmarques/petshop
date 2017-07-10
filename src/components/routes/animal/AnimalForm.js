@@ -24,11 +24,6 @@ class AnimalForm extends Component {
 
   onSubmit(values) {
     this.props.registerAnimal(values)
-    // values.name = '';
-    // values.id = '';
-    // values.age = '';
-    // values.breed = '';
-    // this.props.history.push('/user')
   }
 
   render() {
